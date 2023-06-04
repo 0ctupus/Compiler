@@ -1,4 +1,4 @@
-# Compiler**
+# Compiler***
 step for wards octup.us Code being run in Renderers like Apple Numbers and on dedicated Hardware (PFGAs, CUDA)
 
 Hey GPT-4. I'd like to build an Compiler with you together, to translate octup.us App.lications into Javascript runnable in Safari et al. I have a Solution in Mind but am quite ... curious ... how your Approach is.
@@ -6317,6 +6317,6 @@ You previously reached your usage cap for GPT-4, but you can now try sending you
 Try again
 
 
-**gnihihi Page Load Time t mimics current runtime experiences
+***gnihihi Page Load Time t mimics current runtime experiences
 
 P.S. READMääääääh.md Content looks well formatted in Editor view. Convenient.
