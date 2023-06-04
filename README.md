@@ -1,7 +1,6 @@
 # Compiler
 step for wards octup.us Code being run in Renderers like Apple Numbers and on dedicated Hardware (PFGAs, CUDA)
 
-
 Hey GPT-4. I'd like to build an Compiler with you together, to translate octup.us App.lications into Javascript runnable in Safari et al. I have a Solution in Mind but am quite ... curious ... how your Approach is.
 
 My Procedure:
@@ -997,7 +996,7 @@ As the starting examples are too easy, I focus on the last as octup.us Source:
 8	Invalid day
 	
 day	5
-Console	=XVERWEIS(B10;A;B;B8)
+Consule	=XVERWEIS(B10;A;B;B8)
 
 Leads to Output in octup.us Runtime:
 
@@ -1011,7 +1010,7 @@ Leads to Output in octup.us Runtime:
 8	Invalid day	
 		
 day	5	
-Console	Friday	
+Consule	Friday	
 
 Other Parameter for day: 
 
@@ -1024,7 +1023,7 @@ Other Parameter for day:
 7	Sunday	
 8	Invalid day	
 day	1234	
-Console	Invalid day	
+Consule	Invalid day	
 
 ChatGPT
 Well translated!
@@ -2536,7 +2535,7 @@ Copy code
 This code adjusts the width of all cells (td) in the same column when you resize a header cell (th). This way, the whole column, not just the header, is resized.
 
 
-----
+
 
 User
 Hello ChatGPT. I've prepared an octup.us App.let that is Part of octup.us App: Hearthstone. 
@@ -6311,11 +6310,11 @@ I’d like to emphasize in this context, that Realtime critical implementations 
 
 Generate a new Executive Summary of the whole conversation in mind, that at least includes your last summary and my final thoughts.
 
+
 ChatGPT
 !
-You've reached the current usage cap for GPT-4. You can continue with the default model now, or try again after 7:24 PM. Learn more
-
-Use default model
+You previously reached your usage cap for GPT-4, but you can now try sending your message again
+Try again
 
 
 
