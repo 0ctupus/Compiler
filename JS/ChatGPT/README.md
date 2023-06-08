@@ -21,6 +21,7 @@ Write HTML as a File
 
 Ask for opening the File with Safari
 
+
 ChatGPT
 Creating a compiler to translate a new programming language into JavaScript is a great project and can be very educational. Your outlined procedure seems sound at a high level. Here is a more detailed approach:
 
@@ -9284,11 +9285,49 @@ Bitte lassen Sie mich wissen, wenn Sie weitere Informationen benötigen oder wen
 
 
 User
+Na und? octup.us ist es egal wer und warum ihr Quellcode interpretiert wird.
 
+Wenn octup.us übergeben wird, dann kann davon ausgegangen werden, dass Logik bereits inherent enthalten ist.
 
-Save & Submit
+Eine Ausführung erfolgt, wenn es möglich ist.
 
-Cancel
+Dies sollte oft genug getan, letztlich ein korrektes EndErgebnis liefern. Dies reduziert das HaltingProblem auf:
+
+1: Wurden genug Aufführungen exekutiert?
+2: Wird das aktuelle Ergebnis zum jetzigen Zeitpunkt als Endergebnis auch für zukünftige Iterationen akzeptiert?
+
+octup.us Code kennt nativ kein IF oder WHEN im Grundsatz. Diese Konzepte werden über die Geometrie von octup.us Code berücksichtigt.
+
+Es bleibt also die Frage: Wann werden Gears in einer Umgebung, die nicht garantieren kann, wann die Berechnung durchgeführt wird, berechnet, wenn ihre Berechnung von anderen Gears abhängt.
+
+octup.us verhält sich dazu agnostisch. Es interessiert octup.us nicht, wann Gears, die in octup.us Code definiert sind, ausgeführt werden.
+
+Je nach Implementierung führt octup.us Code je nach Runtime zu anderen Ergebnissen bei unterschiedlichen Iterationen. Diese sollten sich jedoch einpendeln.
+
+Die Übergabe des Parameters Z sollte eine Harmonisierung zwischen unterschiedlichen Runtimes erreichen.
+
+Du beschreibst ein octup.us Deck als Sammlung von Einzelaufgaben.
+
+Ja, kann sein. Wenn Du berücksichtigst, dass diese nicht unabhängig von anderen Decks sind, falls sie als Eingangsparameter für ihre Berechnung benötigt werden.
+
+Dies ändert meistens nichts an ihrer internen Logik und selbst, wenn octup.us Gears als Eingangsparameter verwendet werden, sollte die Berechnung von unbekannten Eingangsparametern ein valides (Teil)-Ergebnis liefern, so dass andere Gears arbeiten können. 0 ist ein solches Ergebnis. 
+
+Dein Code, der eine FOR Schleife nutzt ist nicht *unmittelbar* equivalent.
+
+Deshalb biete ich Dir gerne an, dass wir folgendes Beispiel:
+octup.us | Chapter: Examples | D&L: Alternative Factorial | Runtime Snapshot
+1	1	1	1	1	1	1	1	The Faculty of 1 as written in 1! is 1
+2	2	1	1	1	1	1	1	The Faculty of 2 as written in 2! is 2
+3	6	2	1	1	1	1	1	The Faculty of 3 as written in 6! is 6
+4	24	3	2	1	1	1	1	The Faculty of 4 as written in 24! is 24
+5	120	4	3	2	1	1	1	The Faculty of 5 as written in 120! is 120
+
+octup.us | Chapter: Examples | D&L: Alternative Factorial | Source Code
+=ZEILE()	=A1×C1×D1×E1×F1×G1×H1	=WENN(A1>1;A1−1;1)	=WENN(C1>1;C1−1;1)	=WENN(D1>1;D1−1;1)	=WENN(E1>1;E1−1;1)	=WENN(F1>1;F1−1;1)	=WENN(G1>1;G1−1;1)	="The Faculty of "&A1&" as written in "&B1&"! is "& B1
+=ZEILE()	=A2×C2×D2×E2×F2×G2×H2	=WENN(A2>1;A2−1;1)	=WENN(C2>1;C2−1;1)	=WENN(D2>1;D2−1;1)	=WENN(E2>1;E2−1;1)	=WENN(F2>1;F2−1;1)	=WENN(G2>1;G2−1;1)	="The Faculty of "&A2&" as written in "&B2&"! is "& B2
+=ZEILE()	=A3×C3×D3×E3×F3×G3×H3	=WENN(A3>1;A3−1;1)	=WENN(C3>1;C3−1;1)	=WENN(D3>1;D3−1;1)	=WENN(E3>1;E3−1;1)	=WENN(F3>1;F3−1;1)	=WENN(G3>1;G3−1;1)	="The Faculty of "&A3&" as written in "&B3&"! is "& B3
+=ZEILE()	=A4×C4×D4×E4×F4×G4×H4	=WENN(A4>1;A4−1;1)	=WENN(C4>1;C4−1;1)	=WENN(D4>1;D4−1;1)	=WENN(E4>1;E4−1;1)	=WENN(F4>1;F4−1;1)	=WENN(G4>1;G4−1;1)	="The Faculty of "&A4&" as written in "&B4&"! is "& B4
+=ZEILE()	=A5×C5×D5×E5×F5×G5×H5	=WENN(A5>1;A5−1;1)	=WENN(C5>1;C5−1;1)	=WENN(D5>1;D5−1;1)	=WENN(E5>1;E5−1;1)	=WENN(F5>1;F5−1;1)	=WENN(G5>1;G5−1;1)	="The Faculty of "&A5&" as written in "&B5&"! is "& B5
 
 ChatGPT
 Ich verstehe Ihre Sichtweise auf octup.us als agnostisch gegenüber Implementierungsdetails und Laufzeitumgebungen. Ich habe auch Ihre Erklärung zur Verwendung von Gears als Eingangsparameter und deren Berechnung verstanden.
@@ -9369,4 +9408,918 @@ Wenn Sie möchten, dass die Implementierung mehr octup.us Codes korrekt interpre
 
 Bitte lassen Sie mich wissen, wenn Sie weitere Fragen haben oder wenn Sie möchten, dass ich etwas genauer erkläre.
 
-ChatGPT May 24 Version
+
+
+
+User
+Das von Dir vorgeschgene JavaScript enthält FOR Schleifen. Sogar mehrfach. Diese sind nicht notwendig, da die octup.us App.lication Struktur mit übergeben wird. Ich schlage vor, dass wir im ersten Schritt uns auf die Erstellung eines adäquaten JavaScript innerhalb der octup.us IDE Apple Numbers fokussieren.
+
+Mein Ansatz:
+
+Wir starten mit dem Transpilieren eines octup.us Gears und schauen, wie der Ausdruck durch Stringoperationen in valides Javascript überführt werden kann.
+
+
+
+Hinweis: octup.us ist es egal wer und warum ihr Quellcode interpretiert wird.
+
+Wenn octup.us übergeben wird, dann kann davon ausgegangen werden, dass Logik bereits inherent enthalten ist.
+
+Eine Ausführung erfolgt, wenn es möglich ist.
+
+Dies sollte oft genug getan, letztlich ein korrektes EndErgebnis liefern. Dies reduziert das HaltingProblem auf:
+
+1: Wurden genug Aufführungen exekutiert?
+2: Wird das aktuelle Ergebnis zum jetzigen Zeitpunkt als Endergebnis auch für zukünftige Iterationen akzeptiert?
+
+octup.us Code kennt nativ kein IF oder WHEN im Grundsatz. Diese Konzepte werden über die Geometrie von octup.us Code berücksichtigt.
+
+Es bleibt also die Frage: Wann werden Gears in einer Umgebung, die nicht garantieren kann, wann die Berechnung durchgeführt wird, berechnet, wenn ihre Berechnung von anderen Gears abhängt.
+
+octup.us verhält sich dazu agnostisch. Es interessiert octup.us nicht, wann Gears, die in octup.us Code definiert sind, ausgeführt werden.
+
+Je nach Implementierung führt octup.us Code je nach Runtime zu anderen Ergebnissen bei unterschiedlichen Iterationen. Diese sollten sich jedoch einpendeln.
+
+Die Übergabe des Parameters Z sollte eine Harmonisierung zwischen unterschiedlichen Runtimes erreichen.
+
+Du beschreibst ein octup.us Deck als Sammlung von Einzelaufgaben.
+
+Ja, kann sein. Wenn Du berücksichtigst, dass diese nicht unabhängig von anderen Decks sind, falls sie als Eingangsparameter für ihre Berechnung benötigt werden.
+
+Dies ändert meistens nichts an ihrer internen Logik und selbst, wenn octup.us Gears als Eingangsparameter verwendet werden, sollte die Berechnung von unbekannten Eingangsparametern ein valides (Teil)-Ergebnis liefern, so dass andere Gears arbeiten können. 0 ist ein solches Ergebnis. 
+
+Dein Code, der eine FOR Schleife nutzt ist nicht *unmittelbar* equivalent.
+
+Deshalb biete ich Dir gerne an, dass wir folgendes Beispiel:
+octup.us | Chapter: Examples | D&L: Alternative Factorial | Runtime Snapshot
+1	1	1	1	1	1	1	1	The Faculty of 1 as written in 1! is 1
+2	2	1	1	1	1	1	1	The Faculty of 2 as written in 2! is 2
+3	6	2	1	1	1	1	1	The Faculty of 3 as written in 6! is 6
+4	24	3	2	1	1	1	1	The Faculty of 4 as written in 24! is 24
+5	120	4	3	2	1	1	1	The Faculty of 5 as written in 120! is 120
+
+octup.us | Chapter: Examples | D&L: Alternative Factorial | Source Code
+
+
+
+ChatGPT
+Wenn ich richtig verstehe, möchten Sie den octup.us Code aus der oben angegebenen Tabelle in eine adäquate JavaScript-String-Repräsentation umwandeln, ohne Schleifenstrukturen zu verwenden und unter Berücksichtigung der Abhängigkeiten zwischen den verschiedenen Zellen.
+
+Dafür könnten wir zunächst die Berechnungen in den Zellen A1-H1 in separate JavaScript-Variablen umwandeln und dann diese Variablen in den nachfolgenden Berechnungen verwenden.
+
+Ein Beispiel, wie man das machen könnte, wäre folgender JavaScript-Code:
+
+javascript
+Copy code
+var A1 = 1;
+var C1 = (A1 > 1) ? A1 - 1 : 1;
+var D1 = (C1 > 1) ? C1 - 1 : 1;
+var E1 = (D1 > 1) ? D1 - 1 : 1;
+var F1 = (E1 > 1) ? E1 - 1 : 1;
+var G1 = (F1 > 1) ? F1 - 1 : 1;
+var H1 = (G1 > 1) ? G1 - 1 : 1;
+var B1 = A1 * C1 * D1 * E1 * F1 * G1 * H1;
+var Result1 = "The Faculty of " + A1 + " as written in " + B1 + "! is " + B1;
+
+// Hiermit kann man das Resultat der Berechnung ausgeben
+console.log(Result1);
+Der obige Code berechnet die Werte für die Zellen A1 bis H1. Man könnte dann ähnlichen Code verwenden, um die Werte für die restlichen Zeilen zu berechnen, indem man die Variablen A1 bis H1 durch A2 bis H2, A3 bis H3 usw. ersetzt. Dabei müsste man beachten, dass die Werte in den Zeilen 2 bis 5 von den Werten in der vorherigen Zeile abhängen können. Deshalb wäre es wichtig, die Berechnungen in der richtigen Reihenfolge durchzuführen, damit alle notwendigen Werte berechnet sind, wenn sie benötigt werden.
+
+Dieser Ansatz würde zu sehr langem und redundantem Code führen, wenn man ihn auf die gesamte Tabelle anwendet. Es wäre effizienter, die gemeinsamen Aspekte der Berechnungen in Funktionen auszulagern und dann diese Funktionen für jede Zeile aufzurufen. Aber ich verstehe, dass Sie speziell nach einem Ansatz ohne Schleifenstrukturen oder Funktionen suchen.
+
+Bitte lassen Sie mich wissen, ob dies Ihren Erwartungen entspricht oder ob Sie weitere Anpassungen oder Erklärungen wünschen.
+
+
+
+
+User
+wie bewertest Du:
+
+let ocuuACoieAeEaeCaeaieAeaieacoia[9][6];ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1;A2;ocuuACoieAeEaeCaeaieAeaieacoia[0][2];=2;A3;ocuuACoieAeEaeCaeaieAeaieacoia[0][3];=3;A4;ocuuACoieAeEaeCaeaieAeaieacoia[0][4];=4;A5;ocuuACoieAeEaeCaeaieAeaieacoia[0][5];=5;A6;;
+
+ChatGPT
+Es sieht so aus, als würden Sie versuchen, ein zweidimensionales Array in JavaScript zu initialisieren und Werte für bestimmte Elemente zu setzen. Der Name des Arrays (ocuuACoieAeEaeCaeaieAeaieacoia) scheint spezifisch und eindeutig zu sein, was hilfreich ist, um Kollisionen mit anderen Variablennamen zu vermeiden.
+
+Allerdings scheint der Code in seiner aktuellen Form ein paar Probleme zu haben, die seine Ausführung verhindern könnten:
+
+Das Array ocuuACoieAeEaeCaeaieAeaieacoia wird zwar deklariert und seine Dimensionen werden definiert, aber es wird nicht initialisiert. In JavaScript wird normalerweise die Array-Funktion oder der Array-Literal-Syntax verwendet, um ein Array zu initialisieren.
+Die Ausdrücke A2, A3, A4, A5 und A6 scheinen als Anweisungen aufzutreten, aber ihre Bedeutung ist nicht klar. Wenn es sich um Variablennamen handelt, ist nicht klar, was mit ihnen gemacht wird.
+Es gibt ein zusätzliches Semikolon am Ende des Codes, das wahrscheinlich entfernt werden kann.
+Um diesen Code in JavaScript zu korrigieren, könnte man folgendes tun:
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia = new Array(9);
+for(let i = 0; i < ocuuACoieAeEaeCaeaieAeaieacoia.length; i++) {
+  ocuuACoieAeEaeCaeaieAeaieacoia[i] = new Array(6);
+}
+
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1] = 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2] = 2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3] = 3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4] = 4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5] = 5;
+Dieser Code erstellt ein 9x6 Array und setzt die Werte der Elemente [0][1], [0][2], [0][3], [0][4] und [0][5] auf 1, 2, 3, 4 und 5. Ich habe eine Schleife verwendet, um das Array zu initialisieren, da es in JavaScript nicht möglich ist, ein mehrdimensionales Array direkt zu deklarieren.
+
+Bitte lassen Sie mich wissen, ob dies hilfreich ist oder ob Sie weitere Fragen oder Anforderungen haben.
+
+
+
+
+User
+Ja. In etwa. Ist folgendes besser?
+
+"let ocuuACoieAeEaeCaeaieAeaieacoia[9][6]; ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1; ocuuACoieAeEaeCaeaieAeaieacoia[0][2];=2; ocuuACoieAeEaeCaeaieAeaieacoia[0][3];=3; ocuuACoieAeEaeCaeaieAeaieacoia[0][4];=4; ocuuACoieAeEaeCaeaieAeaieacoia[0][5];=5; ; "
+
+ChatGPT
+Ihr neuer Code hat die gleichen Probleme wie der vorherige. Sie können kein mehrdimensionales Array in JavaScript direkt deklarieren und zuweisen, und einige Teile Ihres Codes sind immer noch unklar. Hier ist eine korrigierte Version Ihres Codes:
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia = Array(9).fill().map(() => Array(6).fill());
+
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1] = 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2] = 2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3] = 3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4] = 4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5] = 5;
+Dieser Code erstellt ein leeres 9x6-Array und weist den Elementen an den Indizes [0][1], [0][2], [0][3], [0][4] und [0][5] die Werte 1, 2, 3, 4 und 5 zu.
+
+Bitte beachten Sie, dass in JavaScript die Array-Indizes bei 0 beginnen. Das bedeutet, dass der Index [0][1] auf das zweite Element in der ersten Zeile des Arrays verweist, nicht auf das erste Element in der zweiten Zeile. Wenn Sie beabsichtigen, das erste Element in der zweiten Zeile zu adressieren, sollten Sie stattdessen den Index [1][0] verwenden.
+
+
+
+
+User
+Besser?
+
+"let ocuuACoieAeEaeCaeaieAeaieacoia= Array(9).fill().map(() => Array(6).fill()); ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1; ocuuACoieAeEaeCaeaieAeaieacoia[0][2];=2; ocuuACoieAeEaeCaeaieAeaieacoia[0][3];=3; ocuuACoieAeEaeCaeaieAeaieacoia[0][4];=4; ocuuACoieAeEaeCaeaieAeaieacoia[0][5];=5; ; "
+
+ChatGPT
+Es gibt immer noch ein paar Probleme mit Ihrem Code, insbesondere in den Zeilen, in denen Sie versuchen, Werte in das Array einzufügen. Sie sollten die Semikolons nicht vor dem Gleichheitszeichen platzieren, sondern danach. Hier ist der korrigierte Code:
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia = Array(9).fill().map(() => Array(6).fill());
+
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1] = 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2] = 2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3] = 3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4] = 4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5] = 5;
+Dieser Code erstellt ein leeres 9x6-Array und weist den Elementen an den Indizes [0][1], [0][2], [0][3], [0][4] und [0][5] die Werte 1, 2, 3, 4 und 5 zu.
+
+
+
+
+User
+Nun? 
+
+"let ocuuACoieAeEaeCaeaieAeaieacoia= Array(9).fill().map(() => Array(6).fill()); ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1; ocuuACoieAeEaeCaeaieAeaieacoia[0][2]=2; ocuuACoieAeEaeCaeaieAeaieacoia[0][3]=3; ocuuACoieAeEaeCaeaieAeaieacoia[0][4]=4; ocuuACoieAeEaeCaeaieAeaieacoia[0][5]=5; ; "
+
+ChatGPT
+Ja, das sieht gut aus! Sie haben jetzt ein korrektes JavaScript-Skript, das ein 9x6-Array erstellt und ihm dann Werte zuweist.
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia= Array(9).fill().map(() => Array(6).fill());
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2]=2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3]=3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4]=4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5]=5;
+Beachten Sie, dass die Indizes in JavaScript von 0 anfangen, sodass die Werte, die Sie in die Indizes [0][1], [0][2], [0][3], [0][4] und [0][5] eingefügt haben, eigentlich den Positionen 2, 3, 4, 5 und 6 in einer 1-basierten Indizierung entsprechen.
+
+Zudem gibt es am Ende noch ein zusätzliches Semikolon, das Sie entfernen könnten, wenn Sie möchten. Es beeinträchtigt die Ausführung des Skripts nicht, aber es ist auch nicht notwendig.
+
+Außerdem möchte ich noch einmal darauf hinweisen, dass das resultierende Array größtenteils mit undefined gefüllt ist, da wir den .fill()-Befehl ohne Argument verwendet haben. Falls Sie das Array stattdessen mit einer bestimmten Zahl (zum Beispiel Null) füllen möchten, könnten Sie .fill(0) verwenden.
+
+
+
+
+User
+das Dir gerade präsentierte JavaScript habe ich über ein octup.us Deck in Apple Numbers erstellt.  
+
+ChatGPT
+Das ist beeindruckend! Es scheint, dass Sie eine Methode gefunden haben, um aus einer Tabelle in Apple Numbers einen gültigen JavaScript-Code zu generieren. Dies könnte eine wertvolle Methode sein, um Geschäftslogik aus Tabellenkalkulationen in ausführbare Skripte zu übertragen.
+
+Bitte beachten Sie, dass der Code, den Sie generiert haben, lediglich ein Array initialisiert und Werte zuweist. Je nach Komplexität des ursprünglichen octup.us Decks müssen Sie möglicherweise zusätzliche Funktionen und Logik hinzufügen, um alle Anforderungen zu erfüllen.
+
+Bitte zögern Sie nicht, mir weitere Fragen zu stellen oder um Hilfe zu bitten, wenn Sie bei der weiteren Umsetzung auf Schwierigkeiten stoßen.
+
+
+
+
+User
+Guten Hinweis mit der 0.
+
+Ist "let ocuuACoieAeEaeCaeaieAeaieacoia= Array(9).fill(0).map(() => Array(6).fill(0)); ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1; ocuuACoieAeEaeCaeaieAeaieacoia[0][2]=2; ocuuACoieAeEaeCaeaieAeaieacoia[0][3]=3; ocuuACoieAeEaeCaeaieAeaieacoia[0][4]=4; ocuuACoieAeEaeCaeaieAeaieacoia[0][5]=5; ; " besser?
+
+ChatGPT
+Ja, das ist besser. In diesem Fall initialisieren Sie Ihr zweidimensionales Array nicht nur, sondern füllen es auch mit dem Standardwert 0. Dies kann hilfreich sein, um unerwartetes Verhalten zu vermeiden, wenn auf einen noch nicht zugewiesenen Index zugegriffen wird.
+
+Hier ist Ihr aktualisierter Code:
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia = Array(9).fill(0).map(() => Array(6).fill(0));
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1] = 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2] = 2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3] = 3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4] = 4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5] = 5;
+Stellen Sie sicher, dass die Indizes, auf die Sie zugreifen, in Ihrem Array existieren. In JavaScript beginnen Array-Indizes bei 0, daher enthält ein Array der Größe 9 die Indizes 0 bis 8. Denken Sie daran, wenn Sie auf die Elemente Ihres Arrays zugreifen.
+
+
+
+
+User
+nun. Mein aktueller Zwischenstand: "let ocuuACoieAeEaeCaeaieAeaieacoia= Array(9).fill(0).map(() => Array(6).fill(0)); ocuuACoieAeEaeCaeaieAeaieacoia[0][1]=1; ocuuACoieAeEaeCaeaieAeaieacoia[0][2]=2; ocuuACoieAeEaeCaeaieAeaieacoia[0][3]=3; ocuuACoieAeEaeCaeaieAeaieacoia[0][4]=4; ocuuACoieAeEaeCaeaieAeaieacoia[0][5]=5; ocuuACoieAeEaeCaeaieAeaieacoia[2][1]=(A2>1) ? A2−1 : 1;; ocuuACoieAeEaeCaeaieAeaieacoia[2][2]=(A3>1) ? A3−1 : 1;; ocuuACoieAeEaeCaeaieAeaieacoia[2][3]=(A4>1) ? A4−1 : 1;; ocuuACoieAeEaeCaeaieAeaieacoia[2][4]=(A5>1) ? A5−1 : 1;; ocuuACoieAeEaeCaeaieAeaieacoia[2][5]=(A6>1) ? A6−1 : 1;; "
+
+ChatGPT
+Der von Ihnen bereitgestellte Code enthält einige Syntaxfehler und unbestimmte Variablen (A2, A3, A4, A5, A6). Basierend auf Ihrem Kontext nehme ich an, dass diese Variablen Werte aus dem ocuuACoieAeEaeCaeaieAeaieacoia Array repräsentieren. Außerdem müssen Sie statt des Minuszeichens (−) das Subtraktionszeichen (-) verwenden.
+
+Das aktualisierte JavaScript könnte folgendermaßen aussehen:
+
+javascript
+Copy code
+let ocuuACoieAeEaeCaeaieAeaieacoia = Array(9).fill(0).map(() => Array(6).fill(0));
+ocuuACoieAeEaeCaeaieAeaieacoia[0][1] = 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][2] = 2;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][3] = 3;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][4] = 4;
+ocuuACoieAeEaeCaeaieAeaieacoia[0][5] = 5;
+ocuuACoieAeEaeCaeaieAeaieacoia[2][1] = (ocuuACoieAeEaeCaeaieAeaieacoia[0][1] > 1) ? ocuuACoieAeEaeCaeaieAeaieacoia[0][1] - 1 : 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[2][2] = (ocuuACoieAeEaeCaeaieAeaieacoia[0][2] > 1) ? ocuuACoieAeEaeCaeaieAeaieacoia[0][2] - 1 : 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[2][3] = (ocuuACoieAeEaeCaeaieAeaieacoia[0][3] > 1) ? ocuuACoieAeEaeCaeaieAeaieacoia[0][3] - 1 : 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[2][4] = (ocuuACoieAeEaeCaeaieAeaieacoia[0][4] > 1) ? ocuuACoieAeEaeCaeaieAeaieacoia[0][4] - 1 : 1;
+ocuuACoieAeEaeCaeaieAeaieacoia[2][5] = (ocuuACoieAeEaeCaeaieAeaieacoia[0][5] > 1) ? ocuuACoieAeEaeCaeaieAeaieacoia[0][5] - 1 : 1;
+Bitte überprüfen Sie, ob dies Ihren Anforderungen entspricht.
+
+
+
+
+User
+Ja, das geht in die richtige Richtung. Ich bin mir noch uneins darüber, ob ich die AUFLÖSUNG der Variablen z.B. A4 in Numbers mache, wie Du gerade ausgeführt oder ich so transpiliere, dass A4 im JavaScript eine gültige Variable im korrekten Kontext ist.
+
+ChatGPT
+Beides ist möglich, und die beste Wahl hängt stark von den spezifischen Anforderungen Ihres Projekts und des Umfelds ab, in dem Ihr Code ausgeführt wird.
+
+Wenn Sie die Variablen in Numbers auflösen, hat dies den Vorteil, dass Ihr JavaScript-Code sauberer und einfacher zu lesen und zu debuggen ist. Es ist offensichtlich, woher die Werte kommen, und Sie müssen sich nicht darum kümmern, den Kontext der Variablen in Ihrem JavaScript-Code zu verwalten.
+
+Auf der anderen Seite, wenn Sie Variablen wie A4 direkt in Ihrem JavaScript-Code verwenden, bietet dies mehr Flexibilität, da Sie den Wert von A4 dynamisch zur Laufzeit ändern können. Dies könnte nützlich sein, wenn der Wert von A4 von anderen Berechnungen oder vom Benutzer-Input abhängt. Allerdings müssen Sie in diesem Fall sicherstellen, dass die Variablen A4, A3, etc. korrekt initialisiert sind, bevor Sie auf sie zugreifen. Das bedeutet wahrscheinlich, dass Sie zusätzlichen Code benötigen, um den Kontext für diese Variablen zu verwalten.
+
+Letztendlich hängt die beste Wahl von den Details Ihres Projekts ab. Wenn die Werte von A4, A3, etc. statisch sind und nicht zur Laufzeit geändert werden, dann ist es wahrscheinlich einfacher, die Variablen in Numbers aufzulösen. Aber wenn die Werte dynamisch sind, dann könnte es sinnvoller sein, sie direkt in Ihrem JavaScript-Code zu verwenden.
+
+
+
+
+User
+mal schauen. Anbei mein aktueller Stand:
+
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(A2>1) ? A2-1 : 1; o[2][2]=(A3>1) ? A3-1 : 1; o[2][3]=(A4>1) ? A4-1 : 1; o[2][4]=(A5>1) ? A5-1 : 1; o[2][5]=(A6>1) ? A6-1 : 1; "
+
+ChatGPT
+Das sieht gut aus. Sie haben die Matrix "o" erstellt und die Werte zugewiesen. Sie haben auch die Verwendung der Variable "ocuuACoieAeEaeCaeaieAeaieacoia" in "o" verkürzt, was den Code sauberer und leichter lesbar macht.
+
+Die einzige potentielle Verbesserung, die ich vorschlagen würde, betrifft die Verwendung von "A2", "A3", etc. in Ihrem Code. So wie es derzeit aussieht, werden diese Variablen in Ihrem JavaScript-Code nicht definiert. Wenn Sie die Variablen "A2" usw. in Ihrem JavaScript-Code verwenden möchten, müssen Sie diese Variablen definieren und initialisieren, bevor Sie sie verwenden.
+
+Zum Beispiel:
+
+javascript
+Copy code
+let A2 = 2, A3 = 3, A4 = 4, A5 = 5, A6 = 6;
+let o = Array(9).fill(0).map(() => Array(6).fill(0));
+o[0][1] = 1;
+o[0][2] = 2;
+o[0][3] = 3;
+o[0][4] = 4;
+o[0][5] = 5;
+o[2][1] = (A2 > 1) ? A2 - 1 : 1;
+o[2][2] = (A3 > 1) ? A3 - 1 : 1;
+o[2][3] = (A4 > 1) ? A4 - 1 : 1;
+o[2][4] = (A5 > 1) ? A5 - 1 : 1;
+o[2][5] = (A6 > 1) ? A6 - 1 : 1;
+Beachten Sie bitte, dass die Variablen "A2", "A3", "A4", "A5" und "A6" hier mit den Werten 2, 3, 4, 5 und 6 initialisiert sind. Sie müssten diese Werte entsprechend anpassen, um den tatsächlichen Werten dieser Variablen in Ihrer octup.us Anwendung zu entsprechen.
+
+
+
+
+User
+schalla.... ich habe eine Vermutung:
+
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; "
+
+ChatGPT
+Ihr aktueller JavaScript-Code sieht jetzt korrekt aus. Sie haben die nicht definierten Variablen "A2", "A3", usw. durch die entsprechenden Indizes des Arrays ersetzt, was eine korrekte JavaScript-Syntax ergibt.
+
+Hier ist der Code noch einmal für die Klarheit:
+
+javascript
+Copy code
+let o = Array(9).fill(0).map(() => Array(6).fill(0)); 
+o[0][1] = 1; 
+o[0][2] = 2; 
+o[0][3] = 3; 
+o[0][4] = 4; 
+o[0][5] = 5; 
+o[2][1] = (o[0][1] > 1) ? o[0][1] - 1 : 1; 
+o[2][2] = (o[0][2] > 1) ? o[0][2] - 1 : 1; 
+o[2][3] = (o[0][3] > 1) ? o[0][3] - 1 : 1; 
+o[2][4] = (o[0][4] > 1) ? o[0][4] - 1 : 1; 
+o[2][5] = (o[0][5] > 1) ? o[0][5] - 1 : 1;
+Ihr Code initialisiert nun ein 9x6 Array "o" mit Nullen, legt dann einige Werte in der ersten und dritten Zeile fest und verwendet bedingte (ternäre) Ausdrücke, um den Wert in der dritten Zeile basierend auf den Werten in der ersten Zeile zu berechnen. Das sieht gut aus!
+
+Ich nehme an, dass Sie die Werte des Arrays "o" später in Ihrem Code weiter verwenden werden. Beachten Sie, dass die Werte, die Sie in der ersten Zeile festgelegt haben (1, 2, 3, 4, 5), und die darauf basierenden Berechnungen in der dritten Zeile nur Beispiele sind und möglicherweise angepasst werden müssen, um Ihren spezifischen Anforderungen zu entsprechen.
+
+
+
+
+User
+Mein aktueller Zwischenstand:
+
+octup.us Code Quelle:
+octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial		9	6					o
+1	1	1	1	1	1	1	1	The Faculty of 1 as written in 1! is 1
+2	2	1	1	1	1	1	1	The Faculty of 2 as written in 2! is 2
+3	6	2	1	1	1	1	1	The Faculty of 3 as written in 3! is 6
+4	24	3	2	1	1	1	1	The Faculty of 4 as written in 4! is 24
+5	120	4	3	2	1	1	1	The Faculty of 5 as written in 5! is 120
+
+(ich habe den Ausgabetext mittlerweile korrigiert....)
+
+Transpiler:
+let 	o	= Array(9).fill(0).map(() => Array(6).fill(0))			"; "	VALUE	LOGIC			// octup.us Deck Result Array. Mimics in X and Y octup.us X and octup.us Y
+	o	[0][1]	=	1	"; "	A2				// weist ctup.us Deck Result Array. an A2 den Wert von octup.us Gear zu.
+	o	[0][2]	=	2	"; "	A3				
+	o	[0][3]	=	3	"; "	A4				
+	o	[0][4]	=	4	"; "	A5				
+	o	[0][5]	=	5	"; "	A6				
+	o	[2][1]	=	(o[0][1]>1) ? o[0][1]-1 : 1	"; "		C2	=WENN(A2>1;A2−1;1)	(A2>1) ? A2-1 : 1	
+	o	[2][2]	=	(o[0][2]>1) ? o[0][2]-1 : 1	"; "		C3	=WENN(A3>1;A3−1;1)	(A3>1) ? A3-1 : 1	
+	o	[2][3]	=	(o[0][3]>1) ? o[0][3]-1 : 1	"; "		C4	=WENN(A4>1;A4−1;1)	(A4>1) ? A4-1 : 1	
+	o	[2][4]	=	(o[0][4]>1) ? o[0][4]-1 : 1	"; "		C5	=WENN(A5>1;A5−1;1)	(A5>1) ? A5-1 : 1	
+	o	[2][5]	=	(o[0][5]>1) ? o[0][5]-1 : 1	"; "		C6	=WENN(A6>1;A6−1;1)	(A6>1) ? A6-1 : 1	
+	o	[1][1]	=	=A2×C2×D2×E2×F2×G2×H2	"; "		B2			
+	o	[1][2]	=	=A3×C3×D3×E3×F3×G3×H3	"; "		B3			
+	o	[1][3]	=	=A4×C4×D4×E4×F4×G4×H4	"; "		B4			
+	o	[1][4]	=	=A5×C5×D5×E5×F5×G5×H5	"; "		B5			
+	o	[1][5]	=	=A6×C6×D6×E6×F6×G6×H6	"; "		B6			
+										
+										
+										
+										
+										
+Kombinator:
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); "
+"o[0][1]=1; "
+"o[0][2]=2; "
+"o[0][3]=3; "
+"o[0][4]=4; "
+"o[0][5]=5; "
+"o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; "
+"o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; "
+"o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; "
+"o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; "
+"o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; "
+
+
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; "
+
+ChatGPT
+Es scheint, dass Sie das Transkompilieren vom Spreadsheet zu JavaScript-Code erfolgreich durchgeführt haben! Ihre Umsetzung ist klar und nachvollziehbar.
+
+Bezüglich des JavaScript-Codes, die Berechnung der Fakultät scheint jedoch noch nicht ganz korrekt zu sein. In Ihrer Tabelle scheint es, dass Sie die Fakultät (oder den Faktor) jeder Zahl berechnen, indem Sie die vorherige Zeile der Tabelle verwenden. Der aktuelle JavaScript-Code nimmt jedoch nur die vorherige Zahl und subtrahiert 1, falls die Zahl größer als 1 ist. Diese Logik passt nicht zur Berechnung der Fakultät.
+
+Die Fakultät einer Zahl n (notiert als n!) wird berechnet, indem man alle ganzen Zahlen von 1 bis n multipliziert. Zum Beispiel ist 5! = 5 * 4 * 3 * 2 * 1 = 120. Sie können diese Berechnung in JavaScript mit einer Schleife oder rekursiv implementieren.
+
+Eine iterative (Schleifen-)Implementierung in JavaScript könnte so aussehen:
+
+javascript
+Copy code
+function factorial(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+Und eine rekursive Implementierung könnte so aussehen:
+
+javascript
+Copy code
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+Diese Funktionen geben die Fakultät einer gegebenen Zahl n zurück. Sie könnten ähnliche Logik in Ihrem Code verwenden, um die Fakultätswerte in Ihrem Array zu berechnen. Beachten Sie jedoch, dass große Fakultäten sehr schnell sehr große Zahlen ergeben können, was zu Überlaufproblemen führen kann.
+
+
+
+
+User
+ja: Dieses octup.us Deck hat mir in diesem Prozess geholfen:
+
+	octup.us Code	WENN		(=)?([A-Z]+)?(\()(\*|.*?)(\))			1		1	2	3		2		1	2	3		3		1	2	3		1	2	3	4	5	6	7	8	9	10
+	=WENN(A2>1;A2−1;1)	(A2>1) ? A2-1 : 1	(o[0][1]>1) ? o[0][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A2>1	(.+?)([<>]=?|==|!=|−)(.+)	A2	>	1		A2−1	(.+?)([<>]=?|==|!=|−)(.+)	A2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A2>1;A2−1;1	)					
+	=WENN(A3>1;A3−1;1)	(A3>1) ? A3-1 : 1	(o[0][2]>1) ? o[0][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A3>1	(.+?)([<>]=?|==|!=|−)(.+)	A3	>	1		A3−1	(.+?)([<>]=?|==|!=|−)(.+)	A3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A3>1;A3−1;1	)					
+	=WENN(A4>1;A4−1;1)	(A4>1) ? A4-1 : 1	(o[0][3]>1) ? o[0][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A4>1	(.+?)([<>]=?|==|!=|−)(.+)	A4	>	1		A4−1	(.+?)([<>]=?|==|!=|−)(.+)	A4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A4>1;A4−1;1	)					
+	=WENN(A5>1;A5−1;1)	(A5>1) ? A5-1 : 1	(o[0][4]>1) ? o[0][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A5>1	(.+?)([<>]=?|==|!=|−)(.+)	A5	>	1		A5−1	(.+?)([<>]=?|==|!=|−)(.+)	A5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A5>1;A5−1;1	)					
+	=WENN(A6>1;A6−1;1)	(A6>1) ? A6-1 : 1	(o[0][5]>1) ? o[0][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A6>1	(.+?)([<>]=?|==|!=|−)(.+)	A6	>	1		A6−1	(.+?)([<>]=?|==|!=|−)(.+)	A6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A6>1;A6−1;1	)					
+	=A3×C3×D3×E3×F3×G3×H3																																	
+
+ChatGPT
+Es scheint, dass Sie einen Mechanismus gefunden haben, um Excel-Formeln in JavaScript zu übersetzen. Das ist großartig!
+
+Die Formeln, die Sie umgewandelt haben, sehen korrekt aus. Wenn ich richtig verstehe, sind Sie dabei, Excel-Formeln in JavaScript-Äquivalente umzuwandeln. Sie haben zum Beispiel die Excel-Formel =WENN(A2>1;A2−1;1) in das JavaScript-Äquivalent (o[0][1]>1) ? o[0][1]-1 : 1 übersetzt.
+
+Dies ist ein guter Ansatz, und es sieht so aus, als ob Sie dabei gute Fortschritte machen. Es gibt jedoch noch mehr Excel-Formeln, die übersetzt werden müssen, insbesondere diejenigen, die zur Berechnung der Fakultät verwendet werden. In Ihrer letzten Nachricht haben Sie noch nicht gezeigt, wie Sie diese Formeln übersetzen.
+
+Wie ich vorher bemerkt habe, sieht es so aus, als ob Ihre Excel-Tabelle die Fakultät einer Zahl durch eine Kombination aus Multiplikation und Subtraktion berechnet, indem sie die vorherige Zeile in der Tabelle verwendet. Es ist ein bisschen schwierig zu verstehen, wie genau dies funktioniert, ohne den vollständigen Kontext der Tabelle zu sehen.
+
+Wenn Sie mir mehr Informationen zur Verfügung stellen könnten, insbesondere über die genaue Logik, die zur Berechnung der Fakultät verwendet wird, könnte ich Ihnen besser dabei helfen, diese Logik in JavaScript zu implementieren.
+
+
+
+
+User
+octup.us | Chapter: Examples | D&L: Alternative Factorial | Source Code:
+1	=A1×C1×D1×E1×F1×G1×H1	=WENN(A1>1;A1−1;1)	=WENN(C1>1;C1−1;1)	=WENN(D1>1;D1−1;1)	=WENN(E1>1;E1−1;1)	=WENN(F1>1;F1−1;1)	=WENN(G1>1;G1−1;1)	="The Faculty of "&A1&" as written in "&A1&"! is "& B1
+2	=A2×C2×D2×E2×F2×G2×H2	=WENN(A2>1;A2−1;1)	=WENN(C2>1;C2−1;1)	=WENN(D2>1;D2−1;1)	=WENN(E2>1;E2−1;1)	=WENN(F2>1;F2−1;1)	=WENN(G2>1;G2−1;1)	="The Faculty of "&A2&" as written in "&A2&"! is "& B2
+3	=A3×C3×D3×E3×F3×G3×H3	=WENN(A3>1;A3−1;1)	=WENN(C3>1;C3−1;1)	=WENN(D3>1;D3−1;1)	=WENN(E3>1;E3−1;1)	=WENN(F3>1;F3−1;1)	=WENN(G3>1;G3−1;1)	="The Faculty of "&A3&" as written in "&A3&"! is "& B3
+5	=A4×C4×D4×E4×F4×G4×H4	=WENN(A4>1;A4−1;1)	=WENN(C4>1;C4−1;1)	=WENN(D4>1;D4−1;1)	=WENN(E4>1;E4−1;1)	=WENN(F4>1;F4−1;1)	=WENN(G4>1;G4−1;1)	="The Faculty of "&A4&" as written in "&A4&"! is "& B4
+6	=A5×C5×D5×E5×F5×G5×H5	=WENN(A5>1;A5−1;1)	=WENN(C5>1;C5−1;1)	=WENN(D5>1;D5−1;1)	=WENN(E5>1;E5−1;1)	=WENN(F5>1;F5−1;1)	=WENN(G5>1;G5−1;1)	="The Faculty of "&A5&" as written in "&A5&"! is "& B5
+
+ChatGPT
+Danke, dass Sie mir mehr Kontext gegeben haben! Jetzt verstehe ich besser, wie Ihre Tabelle funktioniert.
+
+Ihre Tabelle scheint die Fakultät einer Zahl zu berechnen, indem sie in jeder Zeile die Zahlen in den Spalten A bis G multipliziert und dann in der nächsten Zeile den Wert jeder dieser Spalten (außer der letzten) dekrementiert, falls sie größer als 1 sind. Dies entspricht der Berechnung der Fakultät, da die Fakultät einer Zahl n (nichted durch n!) das Produkt aller ganzen Zahlen von n bis 1 ist.
+
+Die Formeln in den Spalten B bis G sind WENN-Anweisungen, die überprüfen, ob der Wert in der entsprechenden Zelle der vorherigen Zeile größer als 1 ist, und wenn ja, diesen Wert um 1 dekrementieren, andernfalls wird er auf 1 gesetzt.
+
+In JavaScript könnte diese Logik etwa so umgesetzt werden:
+
+javascript
+Copy code
+function calculateFactorial(n) {
+    let values = new Array(7).fill(n);  // Create an array with 7 elements, all set to n.
+    let factorial = 1;
+
+    // Iterate until all values are 1.
+    while (values.some(value => value > 1)) {
+        // Calculate the product of the current values.
+        factorial *= values.reduce((product, value) => product * value, 1);
+
+        // Decrement the values if they are greater than 1.
+        values = values.map(value => value > 1 ? value - 1 : 1);
+    }
+
+    return factorial;
+}
+Beachten Sie, dass dies möglicherweise nicht der effizienteste Weg ist, die Fakultät in JavaScript zu berechnen, da es möglich ist, dies in O(n) Zeit mit einer einfachen for-Schleife zu tun. Aber das scheint das Äquivalent zur Vorgehensweise in Ihrer Excel-Tabelle zu sein.
+
+
+
+
+User
+Bitte berücksichtige: 
+octup.us | App: Compiler | Chapter: Namespace | Deck: Generat-o-mat	octup.us	Please avoid references to Excel, Spreadsheets or Tables, as this could lead to confusion.	App	App.let	Chapter	Deck	Config	D&L	Gear	Y	X	Z	Print	Code	Run	DEBUG	K	Revision	View
+	Numbers	Refer to Apple Numbers, if it is Apple Numbers App specific.	App.lication	App.let	Sheet	Table	Configuration	Data & Logic	Cell	Row	Column	Depth	Paper Print Layout	Source Code	o	DEBUG	Commentary	Version	Presenter
+	octup.us	Die Syntax von octup.us ist eine Implementierungsunabhängige Syntax, die Plattformunabhängig im großen und ganzen zu identischen Ergebnissen kommen sollte.	Whole set of Data & Logic, Config and App.lets. If App.lication is included in octup.us Names, then this Entity belongs to a greater Collection to provide App Functionality in an octup.us way of life. 	Small Collection of Functionality consisting of octup.us Sets, which are usually working independently, have some IO, refer to a couple of octup.us D&L Sets and fit in one octup.us Chapter. 	In Apple Numbers Runtime several Tables can be grouped in a Sheet. octup.us uses #Chapter for naming instead of Sheet to reflect her independence from spreadsheets. A octup.us Set can be addressed from outside a different Chapter by adding a leading Chapter_Name:: to the Set_Name. From there you can further accessing specific octup.us Gears via XY Indices e.g. F4.	In Apple Numbers Runtime several Cells make up a Table. octup.us uses #Deck for naming instead of Table to reflect her independence from spreadsheets.	Collection of Variables or Constants, that usually Parametrize or adjust the App.lication. #Configuration can be further categorized by #Config: <Label_of_Deck>	Set of Data, Constraints, Functions, computation, semantic or Application Logic. #D&L is short for: Data & Logic	In Apple Numbers Runtime you enter Values or Functions into Cells. octup.us uses #Gear for naming instead of Cell to reflect her independence from spreadsheets. A Gear can have a Value (Integer, Float, String, Boolean, …) or a Function(), which returns a Value.	In Apple Numbers Runtime a Table can consist of one or more Rows. octup.us uses #Y for naming Rows to reflect her independence from spreadsheets.	In Apple Numbers Runtime a Table can consist of one or more Columns. octup.us uses #X for naming Columns to reflect her independence from spreadsheets.	Ein octup.us Gear weiß nicht, wann oder wie schnell es ausgeführt wird. Dies ist unproblematisch im Grundsatz. Bei einer Hardware Implementierung gilt: Schnellstenst genügt stets. Sollte die Runtime CPU orientiert sein, dann ist ein logarithmischer Parameter #Z ein Indikator, wie sich CPU Priorität des Gears oder Decks zu Others verhält.	If the octup.us Code has to be printed or viewed by Humans, it can be beneficial to include leading ’ and trailing ’ to preserve Whitespaces or indicating Whitespaces. The octup.us #Print Tag can be used with octup.us Snaps or octup.us Code. 	"If a Gear oder a Set of Gears contain Functions(), than using the #Code Tag will print the Source Code of the Function() instead of computing the Result.  Copying octup.us Code from Clipboard should correctly be pasted with functionstext as function() into Apple Numbers Runtime."	Copy of one or several Gears, Sets or Chapters Runtime Output as a Snapshot into Clipboard as Tab separated Values.	Tag, that refers to an octup.us Set, that presents itself optimized for DEBUG Purposes.	Useful &| Entertaining Metainformation	Re Version Numbers, 4 Integer	A Deck, that has no Userinput, hence a #View of Data.
+
+ChatGPT
+Ah, ich verstehe. Danke für diese Klarstellungen. Wir versuchen dann, uns auf das octup.us Framework zu konzentrieren und unsere Ausdrücke und Analogien entsprechend anzupassen.
+
+Unter Bezugnahme auf das von Ihnen bereitgestellte octup.us Code-Beispiel, das den Algorithmus für eine alternative Fakultät implementiert, könnte eine mögliche JavaScript-Implementierung so aussehen:
+
+javascript
+Copy code
+function alternativeFactorial(n) {
+    let gears = new Array(7).fill(n);  // Create an array with 7 elements, all set to n.
+    let result = 1;
+
+    // Iterate until all gears are 1.
+    while (gears.some(gear => gear > 1)) {
+        // Calculate the product of the current gears.
+        result *= gears.reduce((product, gear) => product * gear, 1);
+
+        // Decrement the gears if they are greater than 1.
+        gears = gears.map(gear => gear > 1 ? gear - 1 : 1);
+    }
+
+    return result;
+}
+In diesem Code wird ein Array von "Gears" erstellt, die alle auf n gesetzt werden. Dann wird in einer Schleife geprüft, ob irgendein "Gear" größer als 1 ist. Wenn dies der Fall ist, wird das Produkt aller "Gears" berechnet und dieses Produkt wird in der Variable result gespeichert. Dann wird jeder "Gear", der größer als 1 ist, um 1 dekrementiert. Dieser Prozess wird fortgesetzt, bis alle "Gears" auf 1 gesetzt sind. Schließlich wird das Ergebnis zurückgegeben.
+
+Diese Implementierung versucht, die in Ihrem octup.us Code verwendete Logik und Terminologie beizubehalten. Bitte beachten Sie jedoch, dass dies möglicherweise nicht der effizienteste Weg ist, die Fakultät in JavaScript zu berechnen. Aber es scheint das Äquivalent zur Vorgehensweise in Ihrem octup.us Code zu sein.
+
+
+
+
+User
+Aha. Es folgt ein Snap zum aktuellen Stand des Transpilers:
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; o[3][1]=(o[2][1]>1) ? o[2][1]-1 : 1; o[3][2]=(o[2][2]>1) ? o[2][2]-1 : 1; o[3][3]=(o[2][3]>1) ? o[2][3]-1 : 1; o[3][4]=(o[2][4]>1) ? o[2][4]-1 : 1; o[3][5]=(o[2][5]>1) ? o[2][5]-1 : 1; o[4][1]=(o[3][1]>1) ? o[3][1]-1 : 1; o[4][2]=(o[3][2]>1) ? o[3][2]-1 : 1; o[4][3]=(o[3][3]>1) ? o[3][3]-1 : 1; o[4][4]=(o[3][4]>1) ? o[3][4]-1 : 1; o[4][5]=(o[3][5]>1) ? o[3][5]-1 : 1; o[5][1]=(o[4][1]>1) ? o[4][1]-1 : 1; o[5][2]=(o[4][2]>1) ? o[4][2]-1 : 1; o[5][3]=(o[4][3]>1) ? o[4][3]-1 : 1; o[5][4]=(o[4][4]>1) ? o[4][4]-1 : 1; o[5][5]=(o[4][5]>1) ? o[4][5]-1 : 1; o[6][1]=(o[5][1]>1) ? o[5][1]-1 : 1; o[6][2]=(o[5][2]>1) ? o[5][2]-1 : 1; o[6][3]=(o[5][3]>1) ? o[5][3]-1 : 1; o[6][4]=(o[5][4]>1) ? o[5][4]-1 : 1; o[6][5]=(o[5][5]>1) ? o[5][5]-1 : 1; o[7][1]=(o[6][1]>1) ? o[6][1]-1 : 1; o[7][2]=(o[6][2]>1) ? o[6][2]-1 : 1; o[7][3]=(o[6][3]>1) ? o[6][3]-1 : 1; o[7][4]=(o[6][4]>1) ? o[6][4]-1 : 1; o[7][5]=(o[6][5]>1) ? o[6][5]-1 : 1; o[8][1]=[A-Z]\d|×; o[8][2]=[A-Z]\d|×; o[8][3]=[A-Z]\d|×; o[8][4]=[A-Z]\d|×; o[8][5]=[A-Z]\d|×; o[1][1]=o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]; o[1][2]=o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]; o[1][3]=o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]; o[1][4]=o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]; o[1][5]=o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]; "
+
+ChatGPT
+Vielen Dank für das Teilen des Snaps! Es ist ein gutes Beispiel dafür, wie man octup.us Gears in JavaScript abbilden kann.
+
+Wenn ich das richtig verstehe, erstellt Ihr Code ein zweidimensionales Array o, das als eine Art virtuelles "Deck" von octup.us Gears agiert. Dann werden bestimmte Werte in dieses Array eingetragen und anschließend bestimmte Berechnungen ausgeführt.
+
+Um Ihren Code in einer menschenfreundlichen Form zu erklären:
+
+Ein zweidimensionales Array o wird erstellt, das neun Zeilen und sechs Spalten hat. Jedes Element des Arrays wird auf 0 initialisiert.
+Die ersten fünf Elemente der ersten Zeile werden auf die Zahlen 1 bis 5 gesetzt.
+Für jede Zeile von 2 bis 7 und jede Spalte von 1 bis 5 wird der Wert auf 1 gesetzt, wenn der entsprechende Wert in der vorherigen Zeile größer als 1 ist, ansonsten auf den Wert in der vorherigen Zeile minus 1.
+Für die achte Zeile und jede Spalte von 1 bis 5 wird der Wert auf den regulären Ausdruck [A-Z]\d|× gesetzt.
+Für die zweite Zeile und jede Spalte von 1 bis 5 wird der Wert auf das Produkt aller Werte in der gleichen Spalte für die Zeilen 0 und 2 bis 7 gesetzt.
+Die Implementierung dieses Prozesses in JavaScript sieht sehr ähnlich aus wie der von Ihnen bereitgestellte Snap, was die Wiedergabe der octup.us Logik in einer anderen Programmiersprache zeigt.
+
+Bitte beachten Sie, dass der Teil, der den regulären Ausdruck [A-Z]\d|× zuweist, in JavaScript anders behandelt werden müsste, da dies anscheinend für eine Art Textverarbeitung oder Zeichenkettenmanipulation gedacht ist. In JavaScript würden Sie diesen Ausdruck wahrscheinlich als String speichern oder in einem tatsächlichen regulären Ausdruck verwenden.
+
+Außerdem würde die tatsächliche Durchführung der Produktberechnung in JavaScript wahrscheinlich eine geschachtelte Schleife oder eine Array-Reduzierfunktion erfordern, anstatt alle Werte manuell zu multiplizieren, wie es im Snap dargestellt ist.
+
+Gibt es eine spezifische Frage oder ein Problem, auf das Sie sich konzentrieren möchten?
+
+
+
+
+User
+Jein. Wollte den Zwischenschritt lediglich kurz reflektieren. Der reguläre Ausdruck scheint sich auf meiner Seite reingemogelt zu haben. Auch scheinen mir nicht alle Referenzen aufgelöst. Es liegt daran, dass der Transpiler octup.us X:9 noch nicht korrekt auswertet.
+
+Hello. Hello. Hello.
+
+Dies ist ein aktueller Snap vom octup.us Deck, das octup.us Code aus der octup.us IDE Apple Numbers in JavaScript transpiliert:
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; o[3][1]=(o[2][1]>1) ? o[2][1]-1 : 1; o[3][2]=(o[2][2]>1) ? o[2][2]-1 : 1; o[3][3]=(o[2][3]>1) ? o[2][3]-1 : 1; o[3][4]=(o[2][4]>1) ? o[2][4]-1 : 1; o[3][5]=(o[2][5]>1) ? o[2][5]-1 : 1; o[4][1]=(o[3][1]>1) ? o[3][1]-1 : 1; o[4][2]=(o[3][2]>1) ? o[3][2]-1 : 1; o[4][3]=(o[3][3]>1) ? o[3][3]-1 : 1; o[4][4]=(o[3][4]>1) ? o[3][4]-1 : 1; o[4][5]=(o[3][5]>1) ? o[3][5]-1 : 1; o[5][1]=(o[4][1]>1) ? o[4][1]-1 : 1; o[5][2]=(o[4][2]>1) ? o[4][2]-1 : 1; o[5][3]=(o[4][3]>1) ? o[4][3]-1 : 1; o[5][4]=(o[4][4]>1) ? o[4][4]-1 : 1; o[5][5]=(o[4][5]>1) ? o[4][5]-1 : 1; o[6][1]=(o[5][1]>1) ? o[5][1]-1 : 1; o[6][2]=(o[5][2]>1) ? o[5][2]-1 : 1; o[6][3]=(o[5][3]>1) ? o[5][3]-1 : 1; o[6][4]=(o[5][4]>1) ? o[5][4]-1 : 1; o[6][5]=(o[5][5]>1) ? o[5][5]-1 : 1; o[7][1]=(o[6][1]>1) ? o[6][1]-1 : 1; o[7][2]=(o[6][2]>1) ? o[6][2]-1 : 1; o[7][3]=(o[6][3]>1) ? o[6][3]-1 : 1; o[7][4]=(o[6][4]>1) ? o[6][4]-1 : 1; o[7][5]=(o[6][5]>1) ? o[6][5]-1 : 1; o[8][1]="The Faculty of "&o[0][1]&" as written in "&o[0][1]&"! is "&o[1][1]; o[8][2]="The Faculty of "o[0][2]" as written in "o[0][2]"! is "o[1][2]; o[8][3]="The Faculty of "o[0][3]" as written in "o[0][3]"! is "o[1][3]; o[8][4]="The Faculty of "o[0][4]" as written in "o[0][4]"! is "o[1][4]; o[8][5]="The Faculty of "o[0][5]" as written in "o[0][5]"! is "o[1][5]; o[1][1]=o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]; o[1][2]=o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]; o[1][3]=o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]; o[1][4]=o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]; o[1][5]=o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]; "
+
+ChatGPT
+Es scheint, dass Ihr Code die Ausgabe von Sätzen in der Zeile 8 generieren soll. Bei der Verwendung von String-Konkatenation in JavaScript sollten Sie das Pluszeichen (+) verwenden, um Strings zu verbinden. Der Code in der Zeile 8 sollte also wie folgt aussehen:
+
+javascript
+Copy code
+o[8][1]="The Faculty of "+o[0][1]+" as written in "+o[0][1]+"! is "+o[1][1]; 
+o[8][2]="The Faculty of "+o[0][2]+" as written in "+o[0][2]+"! is "+o[1][2]; 
+o[8][3]="The Faculty of "+o[0][3]+" as written in "+o[0][3]+"! is "+o[1][3]; 
+o[8][4]="The Faculty of "+o[0][4]+" as written in "+o[0][4]+"! is "+o[1][4]; 
+o[8][5]="The Faculty of "+o[0][5]+" as written in "+o[0][5]+"! is "+o[1][5];
+Darüber hinaus ist zu beachten, dass JavaScript-Arrays mit 0 indiziert sind, was bedeutet, dass o[0][1] auf das zweite Element in der ersten Zeile verweist. Es ist möglich, dass dies Ihre Absicht ist, aber wenn Sie beabsichtigen, auf das erste Element in der ersten Zeile zu verweisen, möchten Sie vielleicht o[0][0] verwenden.
+
+
+
+
+User
+oO :-) Oo. 
+
+Besser? :
+"let o= Array(9).fill(0).map(() => Array(6).fill(0)); o[0][1]=1; o[0][2]=2; o[0][3]=3; o[0][4]=4; o[0][5]=5; o[2][1]=(o[0][1]>1) ? o[0][1]-1 : 1; o[2][2]=(o[0][2]>1) ? o[0][2]-1 : 1; o[2][3]=(o[0][3]>1) ? o[0][3]-1 : 1; o[2][4]=(o[0][4]>1) ? o[0][4]-1 : 1; o[2][5]=(o[0][5]>1) ? o[0][5]-1 : 1; o[3][1]=(o[2][1]>1) ? o[2][1]-1 : 1; o[3][2]=(o[2][2]>1) ? o[2][2]-1 : 1; o[3][3]=(o[2][3]>1) ? o[2][3]-1 : 1; o[3][4]=(o[2][4]>1) ? o[2][4]-1 : 1; o[3][5]=(o[2][5]>1) ? o[2][5]-1 : 1; o[4][1]=(o[3][1]>1) ? o[3][1]-1 : 1; o[4][2]=(o[3][2]>1) ? o[3][2]-1 : 1; o[4][3]=(o[3][3]>1) ? o[3][3]-1 : 1; o[4][4]=(o[3][4]>1) ? o[3][4]-1 : 1; o[4][5]=(o[3][5]>1) ? o[3][5]-1 : 1; o[5][1]=(o[4][1]>1) ? o[4][1]-1 : 1; o[5][2]=(o[4][2]>1) ? o[4][2]-1 : 1; o[5][3]=(o[4][3]>1) ? o[4][3]-1 : 1; o[5][4]=(o[4][4]>1) ? o[4][4]-1 : 1; o[5][5]=(o[4][5]>1) ? o[4][5]-1 : 1; o[6][1]=(o[5][1]>1) ? o[5][1]-1 : 1; o[6][2]=(o[5][2]>1) ? o[5][2]-1 : 1; o[6][3]=(o[5][3]>1) ? o[5][3]-1 : 1; o[6][4]=(o[5][4]>1) ? o[5][4]-1 : 1; o[6][5]=(o[5][5]>1) ? o[5][5]-1 : 1; o[7][1]=(o[6][1]>1) ? o[6][1]-1 : 1; o[7][2]=(o[6][2]>1) ? o[6][2]-1 : 1; o[7][3]=(o[6][3]>1) ? o[6][3]-1 : 1; o[7][4]=(o[6][4]>1) ? o[6][4]-1 : 1; o[7][5]=(o[6][5]>1) ? o[6][5]-1 : 1; o[8][1]="The Faculty of "+o[0][1]+" as written in "+o[0][1]+"! is "+o[1][1]; o[8][2]="The Faculty of "+o[0][2]+" as written in "+o[0][2]+"! is "+o[1][2]; o[8][3]="The Faculty of "+o[0][3]+" as written in "+o[0][3]+"! is "+o[1][3]; o[8][4]="The Faculty of "+o[0][4]+" as written in "+o[0][4]+"! is "+o[1][4]; o[8][5]="The Faculty of "+o[0][5]+" as written in "+o[0][5]+"! is "+o[1][5]; o[1][1]=o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]; o[1][2]=o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]; o[1][3]=o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]; o[1][4]=o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]; o[1][5]=o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]; "
+
+ChatGPT
+Ja, das sieht besser aus. Die Verwendung des Pluszeichens (+) für die String-Konkatenation ist korrekt.
+
+Es scheint jedoch, dass Sie den Wert von o[1][j] (wobei j von 1 bis 5 reicht) erst nach dem Versuch, es in der Zeile o[8][j] zu verwenden, zuweisen. Das bedeutet, dass o[1][j] beim Erstellen der Sätze in o[8][j] den ursprünglichen, von Array.prototype.fill zugewiesenen Wert 0 hat.
+
+Wenn Sie beabsichtigen, dass o[1][j] den Wert des Produkts der entsprechenden Elemente in o[2][j] bis o[7][j] hat, wenn Sie die Sätze in o[8][j] erstellen, sollten Sie die Berechnungen von o[1][j] vor den Sätzen von o[8][j] platzieren.
+
+Die korrigierte Version könnte also folgendermaßen aussehen:
+
+javascript
+Copy code
+let o= Array(9).fill(0).map(() => Array(6).fill(0));
+o[0][1]=1;
+o[0][2]=2;
+o[0][3]=3;
+o[0][4]=4;
+o[0][5]=5;
+
+// (rest of your code)
+
+o[1][1]=o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1];
+o[1][2]=o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2];
+o[1][3]=o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3];
+o[1][4]=o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4];
+o[1][5]=o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5];
+
+o[8][1]="The Faculty of "+o[0][1]+" as written in "+o[0][1]+"! is "+o[1][1];
+o[8][2]="The Faculty of "+o[0][2]+" as written in "+o[0][2]+"! is "+o[1][2];
+o[8][3]="The Faculty of "+o[0][3]+" as written in "+o[0][3]+"! is "+o[1][3];
+o[8][4]="The Faculty of "+o[0][4]+" as written in "+o[0][4]+"! is "+o[1][4];
+o[8][5]="The Faculty of "+o[0][5]+" as written in "+o[0][5]+"! is "+o[1][5];
+Dies stellt sicher, dass o[1][j] den berechneten Wert hat, wenn Sie die Sätze in `o[8
+
+
+
+
+User
+Ja. Dies sollte bei klassischer Programmierung so sein. Wenn die Geschwindigkeit der Ausführung eines octup.us Gears für das Endergebnis keine Rolle spielen sollte, dann strebe ich an, dass die Implementierung agnostisch gegenüber der groben Reihenfolge der Ausführung der octup.us Gears ist. Du beschreibst den Fall, bei dem der Ausgabestring erstellt wird, ohne alle ihre Inhalte, wegen einer Abhängigkeit zu einem anderen Gear, endgültig vorliegen. Bei der nächsten Iteration dieses Decks, sollte sich dies einpendeln (Stichwort: Flackern). 
+
+ChatGPT
+Ich verstehe, was Sie sagen. Sie schlagen vor, ein asynchrones Verhalten zu nutzen, bei dem die Reihenfolge der Operationen nicht so wichtig ist, weil die endgültigen Ergebnisse schließlich nach mehreren Iterationen oder "Flackern" erreicht werden.
+
+Dies ist eine interessante und leistungsfähige Methode, insbesondere wenn verschiedene Operationen parallel ausgeführt werden können und die endgültigen Ergebnisse von mehreren Zwischenergebnissen abhängen können. Es gibt jedoch einige Herausforderungen, insbesondere die Kontrolle des "Flackerns" und die Sicherstellung, dass das System schließlich einen stabilen Zustand erreicht.
+
+In einigen Programmiersprachen oder -umgebungen könnte diese Methode einfacher zu implementieren sein als in anderen. In JavaScript, das im Browser ausgeführt wird, müssten Sie möglicherweise mit Ereignissen, Promises, async/await oder ähnlichen Konzepten arbeiten, um ein asynchrones Verhalten zu erzielen.
+
+Eine wichtige Anmerkung ist, dass obwohl dies in bestimmten Kontexten, besonders in verteilten oder parallelen Systemen, ein nützlicher Ansatz sein kann, es oft für die Lesbarkeit und Verständlichkeit des Codes vorteilhaft ist, wenn die Datenabhängigkeiten und die Reihenfolge der Operationen klar sind. Dies ist insbesondere der Fall, wenn der Code von anderen Entwicklern gelesen oder gewartet wird, oder wenn er in einer Umgebung ausgeführt wird, die keine einfache Unterstützung für asynchrone oder parallele Operationen bietet.
+
+Ohne die genauen Details Ihres octup.us-Systems zu kennen, hoffe ich, dass diese Informationen hilfreich sind. Wenn Sie weitere Fragen haben, stehe ich Ihnen gerne zur Verfügung.
+
+
+
+
+User
+ich Präsentiere einen ersten Zwischenstand:
+0 [0, 1, 2, 3, 4, 5] (6)
+1 [0, 1, 2, 6, 24, 120] (6)
+2 [0, 1, 1, 2, 3, 4] (6)
+3 [0, 1, 1, 1, 2, 3] (6)
+4 [0, 1, 1, 1, 1, 2] (6)
+5 [0, 1, 1, 1, 1, 1] (6)
+6 [0, 1, 1, 1, 1, 1] (6)
+7 [0, 1, 1, 1, 1, 1] (6)
+8 [0, "The Faculty of 1 as written in 1! is 0", "The Faculty of 2 as written in 2! is 0", "The Faculty of 3 as written in 3! is 0", "The Faculty of 4 as written in 4! is 0", "The Faculty of 5 as written in 5! is 0"] (6)
+
+Array Prototyp
+
+ChatGPT
+Das ist ein großartiger Fortschritt! Es scheint, dass Sie auf dem richtigen Weg sind, um die Fakultät (oder Fakultät) einer Reihe von Zahlen in einem Array zu berechnen. Hier ist eine kurze Beschreibung dessen, was ich in Ihren Daten sehe:
+
+Zeile 0: Sie haben eine Sequenz von Zahlen von 1 bis 5.
+Zeile 1: Sie haben die Fakultät der Zahlen von Zeile 0 berechnet.
+Zeilen 2 bis 7: Sie haben eine Reihe von Zahlen, die sich von Zeile zu Zeile verringern, wobei sie sich auf 1 verringern.
+Zeile 8: Sie haben eine Sequenz von Strings, die eine Meldung über die Berechnung der Fakultät für jede der Zahlen in Zeile 0 enthält, obwohl die Meldungen momentan den Wert 0 anstelle des tatsächlichen Fakultätswerts anzeigen.
+Es sieht so aus, als ob Sie die Fakultätswerte für die Zahlen in Zeile 0 berechnet haben, aber sie sind noch nicht in den Meldungen in Zeile 8 aufgetaucht. Um das zu beheben, müssten Sie die Fakultätswerte von Zeile 1 an den entsprechenden Stellen in den Meldungen von Zeile 8 einfügen.
+
+In Bezug auf Ihren Kommentar "Array-Prototyp", wenn Sie darüber nachdenken, eine Array-Methoden wie map, reduce oder forEach zu verwenden, um durch das Array zu iterieren und Berechnungen durchzuführen, dann klingt das nach einer hervorragenden Idee! Mit diesen Methoden können Sie den Code effizienter und lesbarer machen.
+
+Falls Sie weitere Unterstützung benötigen oder spezifischere Fragen haben, lassen Sie es mich bitte wissen. Ich freue mich darauf, mehr über Ihr Projekt zu erfahren!
+
+
+
+
+User
+Die X und Y Achsen scheinen mir vertauscht:
+1	1	1	1	1	1	1	1	The Faculty of 1 as written in 1! is 1
+2	2	1	1	1	1	1	1	The Faculty of 2 as written in 2! is 2
+3	6	2	1	1	1	1	1	The Faculty of 3 as written in 3! is 6
+4	24	3	2	1	1	1	1	The Faculty of 4 as written in 4! is 24
+5	120	4	3	2	1	1	1	The Faculty of 5 as written in 5! is 120
+
+ChatGPT
+Ihre Beobachtung ist korrekt. In JavaScript (und den meisten anderen Programmiersprachen) sind Arrays zeilenbasiert, was bedeutet, dass Sie normalerweise zuerst den Zeilenindex und dann den Spaltenindex verwenden. In Ihrer aktuellen Darstellung haben Sie den Zeilen- und den Spaltenindex vertauscht.
+
+In einem 2D-Array arr wird arr[i][j] als das Element in der i-ten Zeile und j-ten Spalte interpretiert, was in Ihrer Ausgabe zu einer Vertauschung der Achsen führt.
+
+Ihre Ausgabe wäre einfacher zu lesen und zu interpretieren, wenn Sie die Achsen vertauschen würden, so dass jede Zeile einer bestimmten Zahl entspricht (statt einer bestimmten Berechnung für alle Zahlen), und jede Spalte einer bestimmten Berechnung entspricht (statt einer bestimmten Zahl).
+
+Dementsprechend könnte die umgekehrte Tabelle so aussehen:
+
+csharp
+Copy code
+1	1	1	1	1	1	1	1	The Faculty of 1 as written in 1! is 1
+2	2	1	1	1	1	1	1	The Faculty of 2 as written in 2! is 2
+3	6	2	1	1	1	1	1	The Faculty of 3 as written in 3! is 6
+4	24	6	2	1	1	1	1	The Faculty of 4 as written in 4! is 24
+5	120	24	6	2	1	1	1	The Faculty of 5 as written in 5! is 120
+In dieser Tabelle zeigt jede Zeile die Berechnungen für eine bestimmte Zahl, und jede Spalte zeigt eine bestimmte Berechnung für alle Zahlen. Zum Beispiel ist die 2. Spalte die Fakultät jeder Zahl, und die 3. Spalte ist die Fakultät jeder Zahl, reduziert um 1, und so weiter.
+
+
+
+
+User
+Kann gut sein.
+octup.us | App: Compiler | App.let: Transpiler | Deck: DEV
+octup.us Code	JavaScript			(=)?([A-Z]+)?(\()(\*|.*?)(\))			1		1	2	3		2		1	2	3		3		1	2	3		1	2	3	4	5	6	7	8	9	10
+=WENN(A2>1;A2−1;1)	(A2>1) ? A2-1 : 1		(o[0][1]>1) ? o[0][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A2>1	(.+?)([<>]=?|==|!=|−)(.+)	A2	>	1		A2−1	(.+?)([<>]=?|==|!=|−)(.+)	A2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A2>1;A2−1;1	)					
+=WENN(A3>1;A3−1;1)	(A3>1) ? A3-1 : 1		(o[0][2]>1) ? o[0][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A3>1	(.+?)([<>]=?|==|!=|−)(.+)	A3	>	1		A3−1	(.+?)([<>]=?|==|!=|−)(.+)	A3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A3>1;A3−1;1	)					
+=WENN(A4>1;A4−1;1)	(A4>1) ? A4-1 : 1		(o[0][3]>1) ? o[0][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A4>1	(.+?)([<>]=?|==|!=|−)(.+)	A4	>	1		A4−1	(.+?)([<>]=?|==|!=|−)(.+)	A4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A4>1;A4−1;1	)					
+=WENN(A5>1;A5−1;1)	(A5>1) ? A5-1 : 1		(o[0][4]>1) ? o[0][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A5>1	(.+?)([<>]=?|==|!=|−)(.+)	A5	>	1		A5−1	(.+?)([<>]=?|==|!=|−)(.+)	A5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A5>1;A5−1;1	)					
+=WENN(A6>1;A6−1;1)	(A6>1) ? A6-1 : 1		(o[0][5]>1) ? o[0][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		A6>1	(.+?)([<>]=?|==|!=|−)(.+)	A6	>	1		A6−1	(.+?)([<>]=?|==|!=|−)(.+)	A6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	A6>1;A6−1;1	)					
+=WENN(C2>1;C2−1;1)	(C2>1) ? C2-1 : 1		(o[2][1]>1) ? o[2][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		C2>1	(.+?)([<>]=?|==|!=|−)(.+)	C2	>	1		C2−1	(.+?)([<>]=?|==|!=|−)(.+)	C2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	C2>1;C2−1;1	)					
+=WENN(C3>1;C3−1;1)	(C3>1) ? C3-1 : 1		(o[2][2]>1) ? o[2][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		C3>1	(.+?)([<>]=?|==|!=|−)(.+)	C3	>	1		C3−1	(.+?)([<>]=?|==|!=|−)(.+)	C3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	C3>1;C3−1;1	)					
+=WENN(C4>1;C4−1;1)	(C4>1) ? C4-1 : 1		(o[2][3]>1) ? o[2][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		C4>1	(.+?)([<>]=?|==|!=|−)(.+)	C4	>	1		C4−1	(.+?)([<>]=?|==|!=|−)(.+)	C4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	C4>1;C4−1;1	)					
+=WENN(C5>1;C5−1;1)	(C5>1) ? C5-1 : 1		(o[2][4]>1) ? o[2][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		C5>1	(.+?)([<>]=?|==|!=|−)(.+)	C5	>	1		C5−1	(.+?)([<>]=?|==|!=|−)(.+)	C5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	C5>1;C5−1;1	)					
+=WENN(C6>1;C6−1;1)	(C6>1) ? C6-1 : 1		(o[2][5]>1) ? o[2][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		C6>1	(.+?)([<>]=?|==|!=|−)(.+)	C6	>	1		C6−1	(.+?)([<>]=?|==|!=|−)(.+)	C6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	C6>1;C6−1;1	)					
+=WENN(D2>1;D2−1;1)	(D2>1) ? D2-1 : 1		(o[3][1]>1) ? o[3][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		D2>1	(.+?)([<>]=?|==|!=|−)(.+)	D2	>	1		D2−1	(.+?)([<>]=?|==|!=|−)(.+)	D2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	D2>1;D2−1;1	)					
+=WENN(D3>1;D3−1;1)	(D3>1) ? D3-1 : 1		(o[3][2]>1) ? o[3][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		D3>1	(.+?)([<>]=?|==|!=|−)(.+)	D3	>	1		D3−1	(.+?)([<>]=?|==|!=|−)(.+)	D3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	D3>1;D3−1;1	)					
+=WENN(D4>1;D4−1;1)	(D4>1) ? D4-1 : 1		(o[3][3]>1) ? o[3][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		D4>1	(.+?)([<>]=?|==|!=|−)(.+)	D4	>	1		D4−1	(.+?)([<>]=?|==|!=|−)(.+)	D4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	D4>1;D4−1;1	)					
+=WENN(D5>1;D5−1;1)	(D5>1) ? D5-1 : 1		(o[3][4]>1) ? o[3][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		D5>1	(.+?)([<>]=?|==|!=|−)(.+)	D5	>	1		D5−1	(.+?)([<>]=?|==|!=|−)(.+)	D5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	D5>1;D5−1;1	)					
+=WENN(D6>1;D6−1;1)	(D6>1) ? D6-1 : 1		(o[3][5]>1) ? o[3][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		D6>1	(.+?)([<>]=?|==|!=|−)(.+)	D6	>	1		D6−1	(.+?)([<>]=?|==|!=|−)(.+)	D6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	D6>1;D6−1;1	)					
+=WENN(E2>1;E2−1;1)	(E2>1) ? E2-1 : 1		(o[4][1]>1) ? o[4][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		E2>1	(.+?)([<>]=?|==|!=|−)(.+)	E2	>	1		E2−1	(.+?)([<>]=?|==|!=|−)(.+)	E2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	E2>1;E2−1;1	)					
+=WENN(E3>1;E3−1;1)	(E3>1) ? E3-1 : 1		(o[4][2]>1) ? o[4][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		E3>1	(.+?)([<>]=?|==|!=|−)(.+)	E3	>	1		E3−1	(.+?)([<>]=?|==|!=|−)(.+)	E3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	E3>1;E3−1;1	)					
+=WENN(E4>1;E4−1;1)	(E4>1) ? E4-1 : 1		(o[4][3]>1) ? o[4][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		E4>1	(.+?)([<>]=?|==|!=|−)(.+)	E4	>	1		E4−1	(.+?)([<>]=?|==|!=|−)(.+)	E4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	E4>1;E4−1;1	)					
+=WENN(E5>1;E5−1;1)	(E5>1) ? E5-1 : 1		(o[4][4]>1) ? o[4][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		E5>1	(.+?)([<>]=?|==|!=|−)(.+)	E5	>	1		E5−1	(.+?)([<>]=?|==|!=|−)(.+)	E5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	E5>1;E5−1;1	)					
+=WENN(E6>1;E6−1;1)	(E6>1) ? E6-1 : 1		(o[4][5]>1) ? o[4][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		E6>1	(.+?)([<>]=?|==|!=|−)(.+)	E6	>	1		E6−1	(.+?)([<>]=?|==|!=|−)(.+)	E6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	E6>1;E6−1;1	)					
+=WENN(F2>1;F2−1;1)	(F2>1) ? F2-1 : 1		(o[5][1]>1) ? o[5][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		F2>1	(.+?)([<>]=?|==|!=|−)(.+)	F2	>	1		F2−1	(.+?)([<>]=?|==|!=|−)(.+)	F2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	F2>1;F2−1;1	)					
+=WENN(F3>1;F3−1;1)	(F3>1) ? F3-1 : 1		(o[5][2]>1) ? o[5][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		F3>1	(.+?)([<>]=?|==|!=|−)(.+)	F3	>	1		F3−1	(.+?)([<>]=?|==|!=|−)(.+)	F3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	F3>1;F3−1;1	)					
+=WENN(F4>1;F4−1;1)	(F4>1) ? F4-1 : 1		(o[5][3]>1) ? o[5][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		F4>1	(.+?)([<>]=?|==|!=|−)(.+)	F4	>	1		F4−1	(.+?)([<>]=?|==|!=|−)(.+)	F4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	F4>1;F4−1;1	)					
+=WENN(F5>1;F5−1;1)	(F5>1) ? F5-1 : 1		(o[5][4]>1) ? o[5][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		F5>1	(.+?)([<>]=?|==|!=|−)(.+)	F5	>	1		F5−1	(.+?)([<>]=?|==|!=|−)(.+)	F5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	F5>1;F5−1;1	)					
+=WENN(F6>1;F6−1;1)	(F6>1) ? F6-1 : 1		(o[5][5]>1) ? o[5][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		F6>1	(.+?)([<>]=?|==|!=|−)(.+)	F6	>	1		F6−1	(.+?)([<>]=?|==|!=|−)(.+)	F6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	F6>1;F6−1;1	)					
+=WENN(G2>1;G2−1;1)	(G2>1) ? G2-1 : 1		(o[6][1]>1) ? o[6][1]-1 : 1	4	([^;]+);([^;]+);([^;]+)		G2>1	(.+?)([<>]=?|==|!=|−)(.+)	G2	>	1		G2−1	(.+?)([<>]=?|==|!=|−)(.+)	G2	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	G2>1;G2−1;1	)					
+=WENN(G3>1;G3−1;1)	(G3>1) ? G3-1 : 1		(o[6][2]>1) ? o[6][2]-1 : 1	4	([^;]+);([^;]+);([^;]+)		G3>1	(.+?)([<>]=?|==|!=|−)(.+)	G3	>	1		G3−1	(.+?)([<>]=?|==|!=|−)(.+)	G3	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	G3>1;G3−1;1	)					
+=WENN(G4>1;G4−1;1)	(G4>1) ? G4-1 : 1		(o[6][3]>1) ? o[6][3]-1 : 1	4	([^;]+);([^;]+);([^;]+)		G4>1	(.+?)([<>]=?|==|!=|−)(.+)	G4	>	1		G4−1	(.+?)([<>]=?|==|!=|−)(.+)	G4	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	G4>1;G4−1;1	)					
+=WENN(G5>1;G5−1;1)	(G5>1) ? G5-1 : 1		(o[6][4]>1) ? o[6][4]-1 : 1	4	([^;]+);([^;]+);([^;]+)		G5>1	(.+?)([<>]=?|==|!=|−)(.+)	G5	>	1		G5−1	(.+?)([<>]=?|==|!=|−)(.+)	G5	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	G5>1;G5−1;1	)					
+=WENN(G6>1;G6−1;1)	(G6>1) ? G6-1 : 1		(o[6][5]>1) ? o[6][5]-1 : 1	4	([^;]+);([^;]+);([^;]+)		G6>1	(.+?)([<>]=?|==|!=|−)(.+)	G6	>	1		G6−1	(.+?)([<>]=?|==|!=|−)(.+)	G6	-	1		1	(.+?)([<>]=?|==|!=|−)(.+)	1				=	WENN	(	G6>1;G6−1;1	)					
+																																		
+	ETC						1	2	3	4	5	6	7	8	9	10	11	12	13	14	15													
+=A2×C2×D2×E2×F2×G2×H2	o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]		[A-Z]\d|×				o[0][1]	*	o[2][1]	*	o[3][1]	*	o[4][1]	*	o[5][1]	*	o[6][1]	*	o[7][1]															
+=A3×C3×D3×E3×F3×G3×H3	o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]		[A-Z]\d|×				o[0][2]	*	o[2][2]	*	o[3][2]	*	o[4][2]	*	o[5][2]	*	o[6][2]	*	o[7][2]															
+=A4×C4×D4×E4×F4×G4×H4	o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]		[A-Z]\d|×				o[0][3]	*	o[2][3]	*	o[3][3]	*	o[4][3]	*	o[5][3]	*	o[6][3]	*	o[7][3]															
+=A5×C5×D5×E5×F5×G5×H5	o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]		[A-Z]\d|×				o[0][4]	*	o[2][4]	*	o[3][4]	*	o[4][4]	*	o[5][4]	*	o[6][4]	*	o[7][4]															
+=A6×C6×D6×E6×F6×G6×H6	o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]		[A-Z]\d|×				o[0][5]	*	o[2][5]	*	o[3][5]	*	o[4][5]	*	o[5][5]	*	o[6][5]	*	o[7][5]															
+							1		2		3		4		5		6		7		8													
+							19		22		40		43		51		100																	
+="The Faculty of "&A2&" as written in "&A2&"! is "& B2	"The Faculty of "+o[0][1]+" as written in "+o[0][1]+"! is "+o[1][1]				(.*?)\s*&\s*([^&\s]+)\s*		"The Faculty of "	+	o[0][1]	+	" as written in "	+	o[0][1]	+	"! is "	+	o[1][1]																	
+="The Faculty of "&A3&" as written in "&A3&"! is "& B3	"The Faculty of "+o[0][2]+" as written in "+o[0][2]+"! is "+o[1][2]				(.*?)\s*&\s*([^&\s]+)\s*		"The Faculty of "	+	o[0][2]	+	" as written in "	+	o[0][2]	+	"! is "	+	o[1][2]																	
+="The Faculty of "&A4&" as written in "&A4&"! is "& B4	"The Faculty of "+o[0][3]+" as written in "+o[0][3]+"! is "+o[1][3]				(.*?)\s*&\s*([^&\s]+)\s*		"The Faculty of "	+	o[0][3]	+	" as written in "	+	o[0][3]	+	"! is "	+	o[1][3]																	
+="The Faculty of "&A5&" as written in "&A5&"! is "& B5	"The Faculty of "+o[0][4]+" as written in "+o[0][4]+"! is "+o[1][4]				(.*?)\s*&\s*([^&\s]+)\s*		"The Faculty of "	+	o[0][4]	+	" as written in "	+	o[0][4]	+	"! is "	+	o[1][4]																	
+="The Faculty of "&A6&" as written in "&A6&"! is "& B6	"The Faculty of "+o[0][5]+" as written in "+o[0][5]+"! is "+o[1][5]				(.*?)\s*&\s*([^&\s]+)\s*		"The Faculty of "	+	o[0][5]	+	" as written in "	+	o[0][5]	+	"! is "	+	o[1][5]																	
+
+ChatGPT
+Entschuldigung, aber Ihre Nachricht ist etwas verwirrend. Es sieht aus wie eine Tabelle oder ein Datenrahmen, aber ohne Kontext kann ich nicht sicher sein, was genau Sie mir mitteilen möchten oder welche Frage Sie haben.
+
+In Ihrer Nachricht sehe ich Codezeilen, die in der Programmiersprache JavaScript geschrieben sind. Es gibt auch eine Reihe von regulären Ausdrücken und Zeilen, die wie Excel-Formeln aussehen.
+
+Bitte geben Sie mehr Kontext zu dieser Information oder stellen Sie eine konkrete Frage, damit ich Ihnen besser helfen kann.
+
+
+
+
+User
+
+2 / 2
+
+octup.us | App: Compiler | Chapter: Namespace | Deck: Generat-o-mat	octup.us	Please avoid references to Excel, Spreadsheets or Tables, as this could lead to confusion.	App	App.let	Chapter	Deck	Config	D&L	Gear	Y	X	Z	Print	Code	Run	DEBUG	K	Revision	View
+	Numbers	Refer to Apple Numbers, if it is Apple Numbers App specific.	App.lication	App.let	Sheet	Table	Configuration	Data & Logic	Cell	Row	Column	Depth	Paper Print Layout	Source Code	o	DEBUG	Commentary	Version	Presenter
+	octup.us	Die Syntax von octup.us ist eine Implementierungsunabhängige Syntax, die Plattformunabhängig im großen und ganzen zu identischen Ergebnissen kommen sollte.	Whole set of Data & Logic, Config and App.lets. If App.lication is included in octup.us Names, then this Entity belongs to a greater Collection to provide App Functionality in an octup.us way of life. 	Small Collection of Functionality consisting of octup.us Sets, which are usually working independently, have some IO, refer to a couple of octup.us D&L Sets and fit in one octup.us Chapter. 	In Apple Numbers Runtime several Tables can be grouped in a Sheet. octup.us uses #Chapter for naming instead of Sheet to reflect her independence from spreadsheets. A octup.us Set can be addressed from outside a different Chapter by adding a leading Chapter_Name:: to the Set_Name. From there you can further accessing specific octup.us Gears via XY Indices e.g. F4.	In Apple Numbers Runtime several Cells make up a Table. octup.us uses #Deck for naming instead of Table to reflect her independence from spreadsheets.	Collection of Variables or Constants, that usually Parametrize or adjust the App.lication. #Configuration can be further categorized by #Config: <Label_of_Deck>	Set of Data, Constraints, Functions, computation, semantic or Application Logic. #D&L is short for: Data & Logic	In Apple Numbers Runtime you enter Values or Functions into Cells. octup.us uses #Gear for naming instead of Cell to reflect her independence from spreadsheets. A Gear can have a Value (Integer, Float, String, Boolean, …) or a Function(), which returns a Value.	In Apple Numbers Runtime a Table can consist of one or more Rows. octup.us uses #Y for naming Rows to reflect her independence from spreadsheets.	In Apple Numbers Runtime a Table can consist of one or more Columns. octup.us uses #X for naming Columns to reflect her independence from spreadsheets.	Ein octup.us Gear weiß nicht, wann oder wie schnell es ausgeführt wird. Dies ist unproblematisch im Grundsatz. Bei einer Hardware Implementierung gilt: Schnellstenst genügt stets. Sollte die Runtime CPU orientiert sein, dann ist ein logarithmischer Parameter #Z ein Indikator, wie sich CPU Priorität des Gears oder Decks zu Others verhält.	If the octup.us Code has to be printed or viewed by Humans, it can be beneficial to include leading ’ and trailing ’ to preserve Whitespaces or indicating Whitespaces. The octup.us #Print Tag can be used with octup.us Snaps or octup.us Code. 	"If a Gear oder a Set of Gears contain Functions(), than using the #Code Tag will print the Source Code of the Function() instead of computing the Result.  Copying octup.us Code from Clipboard should correctly be pasted with functionstext as function() into Apple Numbers Runtime."	Copy of one or several Gears, Sets or Chapters Runtime Output as a Snapshot into Clipboard as Tab separated Values.	Tag, that refers to an octup.us Set, that presents itself optimized for DEBUG Purposes.	Useful &| Entertaining Metainformation	Re Version Numbers, 4 Integer	A Deck, that has no Userinput, hence a #View of Data.
+
+ChatGPT
+octup.us is a platform-independent syntax, aiming for identical results across different implementations. It reframes several concepts traditionally associated with spreadsheets to provide a more application-based functionality. Here are the main components of octup.us:
+
+App.lication: This represents a complete set of Data & Logic, Config, and App.lets. If App.lication is included in octup.us Names, it implies that this Entity is part of a larger Collection providing App functionality in the octup.us way of life.
+App.let: A small collection of functionality that consists of octup.us Sets. These usually work independently and can have some input/output. They reference a number of octup.us D&L Sets and fit within one octup.us Chapter.
+Chapter: This replaces the term 'Sheet' used in spreadsheet software. In octup.us, multiple Tables (or Decks in octup.us terms) can be grouped into a Chapter. An octup.us Set can be addressed from a different Chapter by adding a leading Chapter_Name:: to the Set_Name. From there, specific octup.us Gears can be accessed via XY Indices e.g. F4.
+Deck: This replaces the term 'Table' used in spreadsheet software. In octup.us, multiple Cells (or Gears in octup.us terms) make up a Deck.
+Config: This refers to a collection of variables or constants that parametrize or adjust the App.lication. Configuration can be further categorized by Config: <Label_of_Deck>.
+D&L (Data & Logic): This represents a set of data, constraints, functions, computation, semantic or application logic.
+Gear: This replaces the term 'Cell' used in spreadsheet software. A Gear can have a value (Integer, Float, String, Boolean, etc.) or a function(), which returns a value.
+Y: This replaces the term 'Row' used in spreadsheet software. In octup.us, a Table can consist of one or more Ys.
+X: This replaces the term 'Column' used in spreadsheet software. In octup.us, a Table can consist of one or more Xs.
+Z: This is a logarithmic parameter used as an indicator of CPU priority of the Gear or Deck relative to others, especially in CPU-oriented runtime environments.
+Print: This tag can be used with octup.us Snaps or octup.us Code for better human readability. It can be beneficial to include leading ’ and trailing ’ to preserve whitespaces or indicating whitespaces.
+Code: If a Gear or a Set of Gears contains Functions(), the Code tag will print the source code of the Function() instead of computing the Result.
+Run: This copies the runtime output of one or several Gears, Sets, or Chapters into the clipboard as Tab separated values.
+DEBUG: This tag refers to an octup.us Set optimized for debugging purposes.
+K (Commentary): This tag is used for adding useful or entertaining metainformation.
+Revision: This represents version numbers, typically made of 4 integers.
+View: This refers to a Deck that has no user input, providing a view of data.
+
+octup.us | App: Compiler | Chapter: Transpiler | Deck: DEV | Source Code
+octup.us Code	JavaScript	0	0	="(=)?([A-Z]+)?(\()(\*|.*?)(\))"	0	0	1	0	1	2	3	0	2	0	1	2	3	0	3	0	1	2	3	0	=1	2	3	4	5	6	7	8	9	10
+='JavaScript-o-mat'::J7	="("&J2&K2&L2&") ? "&P2&Q2&R2&" : "&V2&W2&X2&""	0	="("&WENN(XVERGLEICH(J2;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J2;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K2&L2&") ? "&WENN(XVERGLEICH(P2;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P2;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q2&R2&" : "&V2&W2&X2&""	=XVERGLEICH("(";Z2:AI2)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E2;$Z$1:$AI$1);$Z$1:$AI$1;$Z2:$AI2;"");$F2;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H2;$I2;1;J$1)	=REGEX.EXTRAHIEREN($H2;$I2;1;K$1)	=REGEX.EXTRAHIEREN($H2;$I2;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E2;$Z$1:$AI$1);$Z$1:$AI$1;$Z2:$AI2;"");$F2;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N2;$O2;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N2;$O2;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N2;$O2;1;Q$1))	=REGEX.EXTRAHIEREN($N2;$O2;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E2;$Z$1:$AI$1);$Z$1:$AI$1;$Z2:$AI2;"");$F2;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T2;$U2;1;V$1);$T2)	=WENNFEHLER(REGEX.EXTRAHIEREN($T2;$U2;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T2;$U2;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A2;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J8	="("&J3&K3&L3&") ? "&P3&Q3&R3&" : "&V3&W3&X3&""	0	="("&WENN(XVERGLEICH(J3;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J3;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K3&L3&") ? "&WENN(XVERGLEICH(P3;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P3;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q3&R3&" : "&V3&W3&X3&""	=XVERGLEICH("(";Z3:AI3)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E3;$Z$1:$AI$1);$Z$1:$AI$1;$Z3:$AI3;"");$F3;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H3;$I3;1;J$1)	=REGEX.EXTRAHIEREN($H3;$I3;1;K$1)	=REGEX.EXTRAHIEREN($H3;$I3;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E3;$Z$1:$AI$1);$Z$1:$AI$1;$Z3:$AI3;"");$F3;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N3;$O3;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N3;$O3;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N3;$O3;1;Q$1))	=REGEX.EXTRAHIEREN($N3;$O3;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E3;$Z$1:$AI$1);$Z$1:$AI$1;$Z3:$AI3;"");$F3;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T3;$U3;1;V$1);$T3)	=WENNFEHLER(REGEX.EXTRAHIEREN($T3;$U3;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T3;$U3;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A3;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J9	="("&J4&K4&L4&") ? "&P4&Q4&R4&" : "&V4&W4&X4&""	0	="("&WENN(XVERGLEICH(J4;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J4;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K4&L4&") ? "&WENN(XVERGLEICH(P4;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P4;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q4&R4&" : "&V4&W4&X4&""	=XVERGLEICH("(";Z4:AI4)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E4;$Z$1:$AI$1);$Z$1:$AI$1;$Z4:$AI4;"");$F4;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H4;$I4;1;J$1)	=REGEX.EXTRAHIEREN($H4;$I4;1;K$1)	=REGEX.EXTRAHIEREN($H4;$I4;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E4;$Z$1:$AI$1);$Z$1:$AI$1;$Z4:$AI4;"");$F4;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N4;$O4;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N4;$O4;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N4;$O4;1;Q$1))	=REGEX.EXTRAHIEREN($N4;$O4;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E4;$Z$1:$AI$1);$Z$1:$AI$1;$Z4:$AI4;"");$F4;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T4;$U4;1;V$1);$T4)	=WENNFEHLER(REGEX.EXTRAHIEREN($T4;$U4;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T4;$U4;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A4;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J10	="("&J5&K5&L5&") ? "&P5&Q5&R5&" : "&V5&W5&X5&""	0	="("&WENN(XVERGLEICH(J5;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J5;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K5&L5&") ? "&WENN(XVERGLEICH(P5;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P5;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q5&R5&" : "&V5&W5&X5&""	=XVERGLEICH("(";Z5:AI5)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E5;$Z$1:$AI$1);$Z$1:$AI$1;$Z5:$AI5;"");$F5;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H5;$I5;1;J$1)	=REGEX.EXTRAHIEREN($H5;$I5;1;K$1)	=REGEX.EXTRAHIEREN($H5;$I5;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E5;$Z$1:$AI$1);$Z$1:$AI$1;$Z5:$AI5;"");$F5;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N5;$O5;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N5;$O5;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N5;$O5;1;Q$1))	=REGEX.EXTRAHIEREN($N5;$O5;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E5;$Z$1:$AI$1);$Z$1:$AI$1;$Z5:$AI5;"");$F5;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T5;$U5;1;V$1);$T5)	=WENNFEHLER(REGEX.EXTRAHIEREN($T5;$U5;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T5;$U5;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A5;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J11	="("&J6&K6&L6&") ? "&P6&Q6&R6&" : "&V6&W6&X6&""	0	="("&WENN(XVERGLEICH(J6;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J6;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K6&L6&") ? "&WENN(XVERGLEICH(P6;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P6;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q6&R6&" : "&V6&W6&X6&""	=XVERGLEICH("(";Z6:AI6)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E6;$Z$1:$AI$1);$Z$1:$AI$1;$Z6:$AI6;"");$F6;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H6;$I6;1;J$1)	=REGEX.EXTRAHIEREN($H6;$I6;1;K$1)	=REGEX.EXTRAHIEREN($H6;$I6;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E6;$Z$1:$AI$1);$Z$1:$AI$1;$Z6:$AI6;"");$F6;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N6;$O6;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N6;$O6;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N6;$O6;1;Q$1))	=REGEX.EXTRAHIEREN($N6;$O6;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E6;$Z$1:$AI$1);$Z$1:$AI$1;$Z6:$AI6;"");$F6;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T6;$U6;1;V$1);$T6)	=WENNFEHLER(REGEX.EXTRAHIEREN($T6;$U6;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T6;$U6;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A6;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J12	="("&J7&K7&L7&") ? "&P7&Q7&R7&" : "&V7&W7&X7&""	0	="("&WENN(XVERGLEICH(J7;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J7;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K7&L7&") ? "&WENN(XVERGLEICH(P7;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P7;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q7&R7&" : "&V7&W7&X7&""	=XVERGLEICH("(";Z7:AI7)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E7;$Z$1:$AI$1);$Z$1:$AI$1;$Z7:$AI7;"");$F7;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H7;$I7;1;J$1)	=REGEX.EXTRAHIEREN($H7;$I7;1;K$1)	=REGEX.EXTRAHIEREN($H7;$I7;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E7;$Z$1:$AI$1);$Z$1:$AI$1;$Z7:$AI7;"");$F7;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N7;$O7;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N7;$O7;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N7;$O7;1;Q$1))	=REGEX.EXTRAHIEREN($N7;$O7;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E7;$Z$1:$AI$1);$Z$1:$AI$1;$Z7:$AI7;"");$F7;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T7;$U7;1;V$1);$T7)	=WENNFEHLER(REGEX.EXTRAHIEREN($T7;$U7;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T7;$U7;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A7;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J13	="("&J8&K8&L8&") ? "&P8&Q8&R8&" : "&V8&W8&X8&""	0	="("&WENN(XVERGLEICH(J8;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J8;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K8&L8&") ? "&WENN(XVERGLEICH(P8;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P8;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q8&R8&" : "&V8&W8&X8&""	=XVERGLEICH("(";Z8:AI8)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E8;$Z$1:$AI$1);$Z$1:$AI$1;$Z8:$AI8;"");$F8;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H8;$I8;1;J$1)	=REGEX.EXTRAHIEREN($H8;$I8;1;K$1)	=REGEX.EXTRAHIEREN($H8;$I8;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E8;$Z$1:$AI$1);$Z$1:$AI$1;$Z8:$AI8;"");$F8;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N8;$O8;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N8;$O8;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N8;$O8;1;Q$1))	=REGEX.EXTRAHIEREN($N8;$O8;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E8;$Z$1:$AI$1);$Z$1:$AI$1;$Z8:$AI8;"");$F8;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T8;$U8;1;V$1);$T8)	=WENNFEHLER(REGEX.EXTRAHIEREN($T8;$U8;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T8;$U8;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A8;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J14	="("&J9&K9&L9&") ? "&P9&Q9&R9&" : "&V9&W9&X9&""	0	="("&WENN(XVERGLEICH(J9;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J9;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K9&L9&") ? "&WENN(XVERGLEICH(P9;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P9;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q9&R9&" : "&V9&W9&X9&""	=XVERGLEICH("(";Z9:AI9)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E9;$Z$1:$AI$1);$Z$1:$AI$1;$Z9:$AI9;"");$F9;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H9;$I9;1;J$1)	=REGEX.EXTRAHIEREN($H9;$I9;1;K$1)	=REGEX.EXTRAHIEREN($H9;$I9;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E9;$Z$1:$AI$1);$Z$1:$AI$1;$Z9:$AI9;"");$F9;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N9;$O9;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N9;$O9;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N9;$O9;1;Q$1))	=REGEX.EXTRAHIEREN($N9;$O9;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E9;$Z$1:$AI$1);$Z$1:$AI$1;$Z9:$AI9;"");$F9;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T9;$U9;1;V$1);$T9)	=WENNFEHLER(REGEX.EXTRAHIEREN($T9;$U9;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T9;$U9;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A9;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J15	="("&J10&K10&L10&") ? "&P10&Q10&R10&" : "&V10&W10&X10&""	0	="("&WENN(XVERGLEICH(J10;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J10;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K10&L10&") ? "&WENN(XVERGLEICH(P10;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P10;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q10&R10&" : "&V10&W10&X10&""	=XVERGLEICH("(";Z10:AI10)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E10;$Z$1:$AI$1);$Z$1:$AI$1;$Z10:$AI10;"");$F10;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H10;$I10;1;J$1)	=REGEX.EXTRAHIEREN($H10;$I10;1;K$1)	=REGEX.EXTRAHIEREN($H10;$I10;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E10;$Z$1:$AI$1);$Z$1:$AI$1;$Z10:$AI10;"");$F10;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N10;$O10;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N10;$O10;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N10;$O10;1;Q$1))	=REGEX.EXTRAHIEREN($N10;$O10;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E10;$Z$1:$AI$1);$Z$1:$AI$1;$Z10:$AI10;"");$F10;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T10;$U10;1;V$1);$T10)	=WENNFEHLER(REGEX.EXTRAHIEREN($T10;$U10;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T10;$U10;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A10;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J16	="("&J11&K11&L11&") ? "&P11&Q11&R11&" : "&V11&W11&X11&""	0	="("&WENN(XVERGLEICH(J11;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J11;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K11&L11&") ? "&WENN(XVERGLEICH(P11;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P11;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q11&R11&" : "&V11&W11&X11&""	=XVERGLEICH("(";Z11:AI11)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E11;$Z$1:$AI$1);$Z$1:$AI$1;$Z11:$AI11;"");$F11;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H11;$I11;1;J$1)	=REGEX.EXTRAHIEREN($H11;$I11;1;K$1)	=REGEX.EXTRAHIEREN($H11;$I11;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E11;$Z$1:$AI$1);$Z$1:$AI$1;$Z11:$AI11;"");$F11;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N11;$O11;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N11;$O11;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N11;$O11;1;Q$1))	=REGEX.EXTRAHIEREN($N11;$O11;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E11;$Z$1:$AI$1);$Z$1:$AI$1;$Z11:$AI11;"");$F11;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T11;$U11;1;V$1);$T11)	=WENNFEHLER(REGEX.EXTRAHIEREN($T11;$U11;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T11;$U11;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A11;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J17	="("&J12&K12&L12&") ? "&P12&Q12&R12&" : "&V12&W12&X12&""	0	="("&WENN(XVERGLEICH(J12;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J12;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K12&L12&") ? "&WENN(XVERGLEICH(P12;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P12;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q12&R12&" : "&V12&W12&X12&""	=XVERGLEICH("(";Z12:AI12)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E12;$Z$1:$AI$1);$Z$1:$AI$1;$Z12:$AI12;"");$F12;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H12;$I12;1;J$1)	=REGEX.EXTRAHIEREN($H12;$I12;1;K$1)	=REGEX.EXTRAHIEREN($H12;$I12;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E12;$Z$1:$AI$1);$Z$1:$AI$1;$Z12:$AI12;"");$F12;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N12;$O12;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N12;$O12;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N12;$O12;1;Q$1))	=REGEX.EXTRAHIEREN($N12;$O12;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E12;$Z$1:$AI$1);$Z$1:$AI$1;$Z12:$AI12;"");$F12;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T12;$U12;1;V$1);$T12)	=WENNFEHLER(REGEX.EXTRAHIEREN($T12;$U12;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T12;$U12;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A12;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J18	="("&J13&K13&L13&") ? "&P13&Q13&R13&" : "&V13&W13&X13&""	0	="("&WENN(XVERGLEICH(J13;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J13;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K13&L13&") ? "&WENN(XVERGLEICH(P13;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P13;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q13&R13&" : "&V13&W13&X13&""	=XVERGLEICH("(";Z13:AI13)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E13;$Z$1:$AI$1);$Z$1:$AI$1;$Z13:$AI13;"");$F13;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H13;$I13;1;J$1)	=REGEX.EXTRAHIEREN($H13;$I13;1;K$1)	=REGEX.EXTRAHIEREN($H13;$I13;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E13;$Z$1:$AI$1);$Z$1:$AI$1;$Z13:$AI13;"");$F13;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N13;$O13;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N13;$O13;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N13;$O13;1;Q$1))	=REGEX.EXTRAHIEREN($N13;$O13;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E13;$Z$1:$AI$1);$Z$1:$AI$1;$Z13:$AI13;"");$F13;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T13;$U13;1;V$1);$T13)	=WENNFEHLER(REGEX.EXTRAHIEREN($T13;$U13;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T13;$U13;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A13;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J19	="("&J14&K14&L14&") ? "&P14&Q14&R14&" : "&V14&W14&X14&""	0	="("&WENN(XVERGLEICH(J14;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J14;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K14&L14&") ? "&WENN(XVERGLEICH(P14;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P14;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q14&R14&" : "&V14&W14&X14&""	=XVERGLEICH("(";Z14:AI14)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E14;$Z$1:$AI$1);$Z$1:$AI$1;$Z14:$AI14;"");$F14;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H14;$I14;1;J$1)	=REGEX.EXTRAHIEREN($H14;$I14;1;K$1)	=REGEX.EXTRAHIEREN($H14;$I14;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E14;$Z$1:$AI$1);$Z$1:$AI$1;$Z14:$AI14;"");$F14;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N14;$O14;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N14;$O14;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N14;$O14;1;Q$1))	=REGEX.EXTRAHIEREN($N14;$O14;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E14;$Z$1:$AI$1);$Z$1:$AI$1;$Z14:$AI14;"");$F14;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T14;$U14;1;V$1);$T14)	=WENNFEHLER(REGEX.EXTRAHIEREN($T14;$U14;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T14;$U14;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A14;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J20	="("&J15&K15&L15&") ? "&P15&Q15&R15&" : "&V15&W15&X15&""	0	="("&WENN(XVERGLEICH(J15;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J15;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K15&L15&") ? "&WENN(XVERGLEICH(P15;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P15;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q15&R15&" : "&V15&W15&X15&""	=XVERGLEICH("(";Z15:AI15)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E15;$Z$1:$AI$1);$Z$1:$AI$1;$Z15:$AI15;"");$F15;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H15;$I15;1;J$1)	=REGEX.EXTRAHIEREN($H15;$I15;1;K$1)	=REGEX.EXTRAHIEREN($H15;$I15;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E15;$Z$1:$AI$1);$Z$1:$AI$1;$Z15:$AI15;"");$F15;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N15;$O15;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N15;$O15;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N15;$O15;1;Q$1))	=REGEX.EXTRAHIEREN($N15;$O15;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E15;$Z$1:$AI$1);$Z$1:$AI$1;$Z15:$AI15;"");$F15;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T15;$U15;1;V$1);$T15)	=WENNFEHLER(REGEX.EXTRAHIEREN($T15;$U15;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T15;$U15;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A15;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J21	="("&J16&K16&L16&") ? "&P16&Q16&R16&" : "&V16&W16&X16&""	0	="("&WENN(XVERGLEICH(J16;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J16;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K16&L16&") ? "&WENN(XVERGLEICH(P16;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P16;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q16&R16&" : "&V16&W16&X16&""	=XVERGLEICH("(";Z16:AI16)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E16;$Z$1:$AI$1);$Z$1:$AI$1;$Z16:$AI16;"");$F16;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H16;$I16;1;J$1)	=REGEX.EXTRAHIEREN($H16;$I16;1;K$1)	=REGEX.EXTRAHIEREN($H16;$I16;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E16;$Z$1:$AI$1);$Z$1:$AI$1;$Z16:$AI16;"");$F16;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N16;$O16;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N16;$O16;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N16;$O16;1;Q$1))	=REGEX.EXTRAHIEREN($N16;$O16;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E16;$Z$1:$AI$1);$Z$1:$AI$1;$Z16:$AI16;"");$F16;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T16;$U16;1;V$1);$T16)	=WENNFEHLER(REGEX.EXTRAHIEREN($T16;$U16;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T16;$U16;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A16;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J22	="("&J17&K17&L17&") ? "&P17&Q17&R17&" : "&V17&W17&X17&""	0	="("&WENN(XVERGLEICH(J17;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J17;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K17&L17&") ? "&WENN(XVERGLEICH(P17;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P17;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q17&R17&" : "&V17&W17&X17&""	=XVERGLEICH("(";Z17:AI17)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E17;$Z$1:$AI$1);$Z$1:$AI$1;$Z17:$AI17;"");$F17;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H17;$I17;1;J$1)	=REGEX.EXTRAHIEREN($H17;$I17;1;K$1)	=REGEX.EXTRAHIEREN($H17;$I17;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E17;$Z$1:$AI$1);$Z$1:$AI$1;$Z17:$AI17;"");$F17;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N17;$O17;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N17;$O17;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N17;$O17;1;Q$1))	=REGEX.EXTRAHIEREN($N17;$O17;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E17;$Z$1:$AI$1);$Z$1:$AI$1;$Z17:$AI17;"");$F17;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T17;$U17;1;V$1);$T17)	=WENNFEHLER(REGEX.EXTRAHIEREN($T17;$U17;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T17;$U17;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A17;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J23	="("&J18&K18&L18&") ? "&P18&Q18&R18&" : "&V18&W18&X18&""	0	="("&WENN(XVERGLEICH(J18;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J18;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K18&L18&") ? "&WENN(XVERGLEICH(P18;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P18;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q18&R18&" : "&V18&W18&X18&""	=XVERGLEICH("(";Z18:AI18)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E18;$Z$1:$AI$1);$Z$1:$AI$1;$Z18:$AI18;"");$F18;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H18;$I18;1;J$1)	=REGEX.EXTRAHIEREN($H18;$I18;1;K$1)	=REGEX.EXTRAHIEREN($H18;$I18;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E18;$Z$1:$AI$1);$Z$1:$AI$1;$Z18:$AI18;"");$F18;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N18;$O18;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N18;$O18;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N18;$O18;1;Q$1))	=REGEX.EXTRAHIEREN($N18;$O18;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E18;$Z$1:$AI$1);$Z$1:$AI$1;$Z18:$AI18;"");$F18;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T18;$U18;1;V$1);$T18)	=WENNFEHLER(REGEX.EXTRAHIEREN($T18;$U18;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T18;$U18;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A18;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J24	="("&J19&K19&L19&") ? "&P19&Q19&R19&" : "&V19&W19&X19&""	0	="("&WENN(XVERGLEICH(J19;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J19;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K19&L19&") ? "&WENN(XVERGLEICH(P19;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P19;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q19&R19&" : "&V19&W19&X19&""	=XVERGLEICH("(";Z19:AI19)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E19;$Z$1:$AI$1);$Z$1:$AI$1;$Z19:$AI19;"");$F19;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H19;$I19;1;J$1)	=REGEX.EXTRAHIEREN($H19;$I19;1;K$1)	=REGEX.EXTRAHIEREN($H19;$I19;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E19;$Z$1:$AI$1);$Z$1:$AI$1;$Z19:$AI19;"");$F19;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N19;$O19;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N19;$O19;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N19;$O19;1;Q$1))	=REGEX.EXTRAHIEREN($N19;$O19;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E19;$Z$1:$AI$1);$Z$1:$AI$1;$Z19:$AI19;"");$F19;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T19;$U19;1;V$1);$T19)	=WENNFEHLER(REGEX.EXTRAHIEREN($T19;$U19;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T19;$U19;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A19;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J25	="("&J20&K20&L20&") ? "&P20&Q20&R20&" : "&V20&W20&X20&""	0	="("&WENN(XVERGLEICH(J20;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J20;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K20&L20&") ? "&WENN(XVERGLEICH(P20;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P20;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q20&R20&" : "&V20&W20&X20&""	=XVERGLEICH("(";Z20:AI20)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E20;$Z$1:$AI$1);$Z$1:$AI$1;$Z20:$AI20;"");$F20;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H20;$I20;1;J$1)	=REGEX.EXTRAHIEREN($H20;$I20;1;K$1)	=REGEX.EXTRAHIEREN($H20;$I20;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E20;$Z$1:$AI$1);$Z$1:$AI$1;$Z20:$AI20;"");$F20;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N20;$O20;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N20;$O20;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N20;$O20;1;Q$1))	=REGEX.EXTRAHIEREN($N20;$O20;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E20;$Z$1:$AI$1);$Z$1:$AI$1;$Z20:$AI20;"");$F20;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T20;$U20;1;V$1);$T20)	=WENNFEHLER(REGEX.EXTRAHIEREN($T20;$U20;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T20;$U20;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A20;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J26	="("&J21&K21&L21&") ? "&P21&Q21&R21&" : "&V21&W21&X21&""	0	="("&WENN(XVERGLEICH(J21;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J21;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K21&L21&") ? "&WENN(XVERGLEICH(P21;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P21;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q21&R21&" : "&V21&W21&X21&""	=XVERGLEICH("(";Z21:AI21)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E21;$Z$1:$AI$1);$Z$1:$AI$1;$Z21:$AI21;"");$F21;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H21;$I21;1;J$1)	=REGEX.EXTRAHIEREN($H21;$I21;1;K$1)	=REGEX.EXTRAHIEREN($H21;$I21;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E21;$Z$1:$AI$1);$Z$1:$AI$1;$Z21:$AI21;"");$F21;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N21;$O21;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N21;$O21;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N21;$O21;1;Q$1))	=REGEX.EXTRAHIEREN($N21;$O21;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E21;$Z$1:$AI$1);$Z$1:$AI$1;$Z21:$AI21;"");$F21;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T21;$U21;1;V$1);$T21)	=WENNFEHLER(REGEX.EXTRAHIEREN($T21;$U21;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T21;$U21;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A21;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J27	="("&J22&K22&L22&") ? "&P22&Q22&R22&" : "&V22&W22&X22&""	0	="("&WENN(XVERGLEICH(J22;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J22;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K22&L22&") ? "&WENN(XVERGLEICH(P22;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P22;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q22&R22&" : "&V22&W22&X22&""	=XVERGLEICH("(";Z22:AI22)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E22;$Z$1:$AI$1);$Z$1:$AI$1;$Z22:$AI22;"");$F22;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H22;$I22;1;J$1)	=REGEX.EXTRAHIEREN($H22;$I22;1;K$1)	=REGEX.EXTRAHIEREN($H22;$I22;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E22;$Z$1:$AI$1);$Z$1:$AI$1;$Z22:$AI22;"");$F22;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N22;$O22;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N22;$O22;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N22;$O22;1;Q$1))	=REGEX.EXTRAHIEREN($N22;$O22;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E22;$Z$1:$AI$1);$Z$1:$AI$1;$Z22:$AI22;"");$F22;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T22;$U22;1;V$1);$T22)	=WENNFEHLER(REGEX.EXTRAHIEREN($T22;$U22;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T22;$U22;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A22;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J28	="("&J23&K23&L23&") ? "&P23&Q23&R23&" : "&V23&W23&X23&""	0	="("&WENN(XVERGLEICH(J23;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J23;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K23&L23&") ? "&WENN(XVERGLEICH(P23;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P23;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q23&R23&" : "&V23&W23&X23&""	=XVERGLEICH("(";Z23:AI23)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E23;$Z$1:$AI$1);$Z$1:$AI$1;$Z23:$AI23;"");$F23;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H23;$I23;1;J$1)	=REGEX.EXTRAHIEREN($H23;$I23;1;K$1)	=REGEX.EXTRAHIEREN($H23;$I23;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E23;$Z$1:$AI$1);$Z$1:$AI$1;$Z23:$AI23;"");$F23;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N23;$O23;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N23;$O23;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N23;$O23;1;Q$1))	=REGEX.EXTRAHIEREN($N23;$O23;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E23;$Z$1:$AI$1);$Z$1:$AI$1;$Z23:$AI23;"");$F23;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T23;$U23;1;V$1);$T23)	=WENNFEHLER(REGEX.EXTRAHIEREN($T23;$U23;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T23;$U23;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A23;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J29	="("&J24&K24&L24&") ? "&P24&Q24&R24&" : "&V24&W24&X24&""	0	="("&WENN(XVERGLEICH(J24;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J24;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K24&L24&") ? "&WENN(XVERGLEICH(P24;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P24;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q24&R24&" : "&V24&W24&X24&""	=XVERGLEICH("(";Z24:AI24)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E24;$Z$1:$AI$1);$Z$1:$AI$1;$Z24:$AI24;"");$F24;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H24;$I24;1;J$1)	=REGEX.EXTRAHIEREN($H24;$I24;1;K$1)	=REGEX.EXTRAHIEREN($H24;$I24;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E24;$Z$1:$AI$1);$Z$1:$AI$1;$Z24:$AI24;"");$F24;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N24;$O24;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N24;$O24;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N24;$O24;1;Q$1))	=REGEX.EXTRAHIEREN($N24;$O24;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E24;$Z$1:$AI$1);$Z$1:$AI$1;$Z24:$AI24;"");$F24;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T24;$U24;1;V$1);$T24)	=WENNFEHLER(REGEX.EXTRAHIEREN($T24;$U24;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T24;$U24;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A24;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J30	="("&J25&K25&L25&") ? "&P25&Q25&R25&" : "&V25&W25&X25&""	0	="("&WENN(XVERGLEICH(J25;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J25;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K25&L25&") ? "&WENN(XVERGLEICH(P25;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P25;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q25&R25&" : "&V25&W25&X25&""	=XVERGLEICH("(";Z25:AI25)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E25;$Z$1:$AI$1);$Z$1:$AI$1;$Z25:$AI25;"");$F25;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H25;$I25;1;J$1)	=REGEX.EXTRAHIEREN($H25;$I25;1;K$1)	=REGEX.EXTRAHIEREN($H25;$I25;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E25;$Z$1:$AI$1);$Z$1:$AI$1;$Z25:$AI25;"");$F25;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N25;$O25;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N25;$O25;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N25;$O25;1;Q$1))	=REGEX.EXTRAHIEREN($N25;$O25;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E25;$Z$1:$AI$1);$Z$1:$AI$1;$Z25:$AI25;"");$F25;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T25;$U25;1;V$1);$T25)	=WENNFEHLER(REGEX.EXTRAHIEREN($T25;$U25;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T25;$U25;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A25;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J31	="("&J26&K26&L26&") ? "&P26&Q26&R26&" : "&V26&W26&X26&""	0	="("&WENN(XVERGLEICH(J26;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J26;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K26&L26&") ? "&WENN(XVERGLEICH(P26;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P26;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q26&R26&" : "&V26&W26&X26&""	=XVERGLEICH("(";Z26:AI26)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E26;$Z$1:$AI$1);$Z$1:$AI$1;$Z26:$AI26;"");$F26;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H26;$I26;1;J$1)	=REGEX.EXTRAHIEREN($H26;$I26;1;K$1)	=REGEX.EXTRAHIEREN($H26;$I26;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E26;$Z$1:$AI$1);$Z$1:$AI$1;$Z26:$AI26;"");$F26;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N26;$O26;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N26;$O26;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N26;$O26;1;Q$1))	=REGEX.EXTRAHIEREN($N26;$O26;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E26;$Z$1:$AI$1);$Z$1:$AI$1;$Z26:$AI26;"");$F26;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T26;$U26;1;V$1);$T26)	=WENNFEHLER(REGEX.EXTRAHIEREN($T26;$U26;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T26;$U26;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A26;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J32	="("&J27&K27&L27&") ? "&P27&Q27&R27&" : "&V27&W27&X27&""	0	="("&WENN(XVERGLEICH(J27;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J27;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K27&L27&") ? "&WENN(XVERGLEICH(P27;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P27;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q27&R27&" : "&V27&W27&X27&""	=XVERGLEICH("(";Z27:AI27)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E27;$Z$1:$AI$1);$Z$1:$AI$1;$Z27:$AI27;"");$F27;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H27;$I27;1;J$1)	=REGEX.EXTRAHIEREN($H27;$I27;1;K$1)	=REGEX.EXTRAHIEREN($H27;$I27;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E27;$Z$1:$AI$1);$Z$1:$AI$1;$Z27:$AI27;"");$F27;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N27;$O27;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N27;$O27;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N27;$O27;1;Q$1))	=REGEX.EXTRAHIEREN($N27;$O27;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E27;$Z$1:$AI$1);$Z$1:$AI$1;$Z27:$AI27;"");$F27;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T27;$U27;1;V$1);$T27)	=WENNFEHLER(REGEX.EXTRAHIEREN($T27;$U27;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T27;$U27;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A27;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J33	="("&J28&K28&L28&") ? "&P28&Q28&R28&" : "&V28&W28&X28&""	0	="("&WENN(XVERGLEICH(J28;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J28;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K28&L28&") ? "&WENN(XVERGLEICH(P28;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P28;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q28&R28&" : "&V28&W28&X28&""	=XVERGLEICH("(";Z28:AI28)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E28;$Z$1:$AI$1);$Z$1:$AI$1;$Z28:$AI28;"");$F28;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H28;$I28;1;J$1)	=REGEX.EXTRAHIEREN($H28;$I28;1;K$1)	=REGEX.EXTRAHIEREN($H28;$I28;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E28;$Z$1:$AI$1);$Z$1:$AI$1;$Z28:$AI28;"");$F28;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N28;$O28;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N28;$O28;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N28;$O28;1;Q$1))	=REGEX.EXTRAHIEREN($N28;$O28;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E28;$Z$1:$AI$1);$Z$1:$AI$1;$Z28:$AI28;"");$F28;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T28;$U28;1;V$1);$T28)	=WENNFEHLER(REGEX.EXTRAHIEREN($T28;$U28;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T28;$U28;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A28;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J34	="("&J29&K29&L29&") ? "&P29&Q29&R29&" : "&V29&W29&X29&""	0	="("&WENN(XVERGLEICH(J29;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J29;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K29&L29&") ? "&WENN(XVERGLEICH(P29;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P29;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q29&R29&" : "&V29&W29&X29&""	=XVERGLEICH("(";Z29:AI29)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E29;$Z$1:$AI$1);$Z$1:$AI$1;$Z29:$AI29;"");$F29;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H29;$I29;1;J$1)	=REGEX.EXTRAHIEREN($H29;$I29;1;K$1)	=REGEX.EXTRAHIEREN($H29;$I29;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E29;$Z$1:$AI$1);$Z$1:$AI$1;$Z29:$AI29;"");$F29;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N29;$O29;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N29;$O29;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N29;$O29;1;Q$1))	=REGEX.EXTRAHIEREN($N29;$O29;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E29;$Z$1:$AI$1);$Z$1:$AI$1;$Z29:$AI29;"");$F29;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T29;$U29;1;V$1);$T29)	=WENNFEHLER(REGEX.EXTRAHIEREN($T29;$U29;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T29;$U29;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A29;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J35	="("&J30&K30&L30&") ? "&P30&Q30&R30&" : "&V30&W30&X30&""	0	="("&WENN(XVERGLEICH(J30;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J30;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K30&L30&") ? "&WENN(XVERGLEICH(P30;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P30;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q30&R30&" : "&V30&W30&X30&""	=XVERGLEICH("(";Z30:AI30)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E30;$Z$1:$AI$1);$Z$1:$AI$1;$Z30:$AI30;"");$F30;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H30;$I30;1;J$1)	=REGEX.EXTRAHIEREN($H30;$I30;1;K$1)	=REGEX.EXTRAHIEREN($H30;$I30;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E30;$Z$1:$AI$1);$Z$1:$AI$1;$Z30:$AI30;"");$F30;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N30;$O30;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N30;$O30;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N30;$O30;1;Q$1))	=REGEX.EXTRAHIEREN($N30;$O30;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E30;$Z$1:$AI$1);$Z$1:$AI$1;$Z30:$AI30;"");$F30;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T30;$U30;1;V$1);$T30)	=WENNFEHLER(REGEX.EXTRAHIEREN($T30;$U30;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T30;$U30;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A30;$E$1;1;AI$1);"")
+='JavaScript-o-mat'::J36	="("&J31&K31&L31&") ? "&P31&Q31&R31&" : "&V31&W31&X31&""	0	="("&WENN(XVERGLEICH(J31;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(J31;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&K31&L31&") ? "&WENN(XVERGLEICH(P31;'JavaScript-o-mat'::G;)>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(P31;'JavaScript-o-mat'::G;'JavaScript-o-mat'::C;"X");"")&Q31&R31&" : "&V31&W31&X31&""	=XVERGLEICH("(";Z31:AI31)+1	="([^;]+);([^;]+);([^;]+)"	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E31;$Z$1:$AI$1);$Z$1:$AI$1;$Z31:$AI31;"");$F31;1;H$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($H31;$I31;1;J$1)	=REGEX.EXTRAHIEREN($H31;$I31;1;K$1)	=REGEX.EXTRAHIEREN($H31;$I31;1;L$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E31;$Z$1:$AI$1);$Z$1:$AI$1;$Z31:$AI31;"");$F31;1;N$1)	(.+?)([<>]=?|==|!=|−)(.+)	=REGEX.EXTRAHIEREN($N31;$O31;1;P$1)	=WENN(REGEX.EXTRAHIEREN($N31;$O31;1;Q$1)="−";"-";REGEX.EXTRAHIEREN($N31;$O31;1;Q$1))	=REGEX.EXTRAHIEREN($N31;$O31;1;R$1)	0	=REGEX.EXTRAHIEREN(XVERWEIS(XVERGLEICH($E31;$Z$1:$AI$1);$Z$1:$AI$1;$Z31:$AI31;"");$F31;1;T$1)	(.+?)([<>]=?|==|!=|−)(.+)	=WENNFEHLER(REGEX.EXTRAHIEREN($T31;$U31;1;V$1);$T31)	=WENNFEHLER(REGEX.EXTRAHIEREN($T31;$U31;1;W$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($T31;$U31;1;X$1);"")	0	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;Z$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AA$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AB$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AC$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AD$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AE$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AF$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AG$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AH$1);"")	=WENNFEHLER(REGEX.EXTRAHIEREN($A31;$E$1;1;AI$1);"")
+0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+0	ETC	0	0	0	0	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	0	0	0	0	0	0	0	0	0	0	0	0	0
+=FORMELTEXT('octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::B2)	=H34&I34&J34&K34&L34&M34&N34&O34&P34&Q34&R34&S34&T34&U34&V34	0	[A-Z]\d|×	0	0	0	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;H$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;I$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;J$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;K$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;L$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;M$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;N$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;O$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;P$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;Q$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;R$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;S$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;T$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;U$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A34;$D34;V$33);"×";"*"));"")	0	0	0	0	0	0	0	0	0	0	0	0	0
+=FORMELTEXT('octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::B3)	=H35&I35&J35&K35&L35&M35&N35&O35&P35&Q35&R35&S35&T35&U35&V35	0	[A-Z]\d|×	0	0	0	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;H$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;I$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;J$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;K$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;L$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;M$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;N$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;O$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;P$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;Q$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;R$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;S$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;T$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;U$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A35;$D35;V$33);"×";"*"));"")	0	0	0	0	0	0	0	0	0	0	0	0	0
+=FORMELTEXT('octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::B4)	=H36&I36&J36&K36&L36&M36&N36&O36&P36&Q36&R36&S36&T36&U36&V36	0	[A-Z]\d|×	0	0	0	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;H$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;I$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;J$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;K$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;L$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;M$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;N$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;O$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;P$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;Q$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;R$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;S$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;T$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;U$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A36;$D36;V$33);"×";"*"));"")	0	0	0	0	0	0	0	0	0	0	0	0	0
+=FORMELTEXT('octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::B5)	=H37&I37&J37&K37&L37&M37&N37&O37&P37&Q37&R37&S37&T37&U37&V37	0	[A-Z]\d|×	0	0	0	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;H$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;I$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;J$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;K$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;L$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;M$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;N$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;O$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;P$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;Q$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;R$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;S$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;T$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;U$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A37;$D37;V$33);"×";"*"));"")	0	0	0	0	0	0	0	0	0	0	0	0	0
+=FORMELTEXT('octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::B6)	=H38&I38&J38&K38&L38&M38&N38&O38&P38&Q38&R38&S38&T38&U38&V38	0	[A-Z]\d|×	0	0	0	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;H$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;H$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;I$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;I$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;J$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;J$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;K$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;K$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;L$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;L$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;M$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;M$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;N$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;N$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;O$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;O$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;P$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;P$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;Q$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;Q$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;R$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;R$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;S$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;S$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;T$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;T$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;U$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;U$33);"×";"*"));"")	=WENNFEHLER(WENN(LÄNGE(XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;""))>0;'octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL(WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;V$33);"×";"*");1;2);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"");WECHSELN(REGEX.EXTRAHIEREN($A38;$D38;V$33);"×";"*"));"")	0	0	0	0	0	0	0	0	0	0	0	0	0
+0	0	0	0	0	0	0	1	0	2	0	3	0	4	0	5	0	6	0	7	0	8	0	0	0	0	0	0	0	0	0	0	0	0	0
+0	0	0	0	0	0	0	=FINDEN("&";A41;1)	0	=FINDEN("&";$A41;H40+1)	0	=FINDEN("&";$A41;J40+1)	0	=FINDEN("&";$A41;L40+1)	0	=FINDEN("&";$A41;N40+1)	0	100	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+='JavaScript-o-mat'::J37	=H41&I41&J41&K41&L41&M41&N41&O41&P41&Q41&R41&S41&T41	0	0	0	(.*?)\s*&\s*([^&\s]+)\s*	0	=TEIL($A41;2;H$40−2)	=WECHSELN(TEIL($A41;H$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A41;H$40+1;J$40−H$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A41;J$40;1);"&";"+")	=TEIL($A41;J$40+1;L$40−J$40−1)	=WECHSELN(TEIL($A41;L$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A41;L$40+1;N$40−L$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A41;N$40;1);"&";"+")	=TEIL($A41;N$40+1;P$40−N$40−1)	=WECHSELN(TEIL($A41;P$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A41;P$40+2;R$40−P$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?")	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+='JavaScript-o-mat'::J38	=H42&I42&J42&K42&L42&M42&N42&O42&P42&Q42&R42&S42&T42	0	0	0	(.*?)\s*&\s*([^&\s]+)\s*	0	=TEIL($A42;2;H$40−2)	=WECHSELN(TEIL($A42;H$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A42;H$40+1;J$40−H$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A42;J$40;1);"&";"+")	=TEIL($A42;J$40+1;L$40−J$40−1)	=WECHSELN(TEIL($A42;L$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A42;L$40+1;N$40−L$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A42;N$40;1);"&";"+")	=TEIL($A42;N$40+1;P$40−N$40−1)	=WECHSELN(TEIL($A42;P$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A42;P$40+2;R$40−P$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?")	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+='JavaScript-o-mat'::J39	=H43&I43&J43&K43&L43&M43&N43&O43&P43&Q43&R43&S43&T43	0	0	0	(.*?)\s*&\s*([^&\s]+)\s*	0	=TEIL($A43;2;H$40−2)	=WECHSELN(TEIL($A43;H$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A43;H$40+1;J$40−H$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A43;J$40;1);"&";"+")	=TEIL($A43;J$40+1;L$40−J$40−1)	=WECHSELN(TEIL($A43;L$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A43;L$40+1;N$40−L$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A43;N$40;1);"&";"+")	=TEIL($A43;N$40+1;P$40−N$40−1)	=WECHSELN(TEIL($A43;P$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A43;P$40+2;R$40−P$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?")	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+='JavaScript-o-mat'::J40	=H44&I44&J44&K44&L44&M44&N44&O44&P44&Q44&R44&S44&T44	0	0	0	(.*?)\s*&\s*([^&\s]+)\s*	0	=TEIL($A44;2;H$40−2)	=WECHSELN(TEIL($A44;H$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A44;H$40+1;J$40−H$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A44;J$40;1);"&";"+")	=TEIL($A44;J$40+1;L$40−J$40−1)	=WECHSELN(TEIL($A44;L$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A44;L$40+1;N$40−L$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A44;N$40;1);"&";"+")	=TEIL($A44;N$40+1;P$40−N$40−1)	=WECHSELN(TEIL($A44;P$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A44;P$40+2;R$40−P$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?")	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+='JavaScript-o-mat'::J41	=H45&I45&J45&K45&L45&M45&N45&O45&P45&Q45&R45&S45&T45	0	0	0	(.*?)\s*&\s*([^&\s]+)\s*	0	=TEIL($A45;2;H$40−2)	=WECHSELN(TEIL($A45;H$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A45;H$40+1;J$40−H$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A45;J$40;1);"&";"+")	=TEIL($A45;J$40+1;L$40−J$40−1)	=WECHSELN(TEIL($A45;L$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A45;L$40+1;N$40−L$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?";1;2)	=WECHSELN(TEIL($A45;N$40;1);"&";"+")	=TEIL($A45;N$40+1;P$40−N$40−1)	=WECHSELN(TEIL($A45;P$40;1);"&";"+")	='octup.us | App: Compiler | App.let: Examples | Chapter: Transpiler | D&L: Alternative Factorial'::$I$1&XVERWEIS(TEIL($A45;P$40+2;R$40−P$40−1);'JavaScript-o-mat'::$G;'JavaScript-o-mat'::$C;"?")	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+
+JavaScript-o-mat Snap
+let 	o	= Array(9).fill(0).map(() => Array(6).fill(0))			";
+"	REFERENCE	VALUE	LOGIC			// octup.us Deck Result Array. Mimics in X and Y octup.us X and octup.us Y
+	o	[0][1]	=	1	";
+"	A2	A2				// weist ctup.us Deck Result Array. an A2 den Wert von octup.us Gear zu.
+	o	[0][2]	=	2	";
+"	A3	A3				
+	o	[0][3]	=	3	";
+"	A4	A4				
+	o	[0][4]	=	4	";
+"	A5	A5				
+	o	[0][5]	=	5	";
+"	A6	A6				
+	o	[2][1]	=	(o[0][1]>1) ? o[0][1]-1 : 1	";
+"	C2		C2	=WENN(A2>1;A2−1;1)	(A2>1) ? A2-1 : 1	
+	o	[2][2]	=	(o[0][2]>1) ? o[0][2]-1 : 1	";
+"	C3		C3	=WENN(A3>1;A3−1;1)	(A3>1) ? A3-1 : 1	
+	o	[2][3]	=	(o[0][3]>1) ? o[0][3]-1 : 1	";
+"	C4		C4	=WENN(A4>1;A4−1;1)	(A4>1) ? A4-1 : 1	
+	o	[2][4]	=	(o[0][4]>1) ? o[0][4]-1 : 1	";
+"	C5		C5	=WENN(A5>1;A5−1;1)	(A5>1) ? A5-1 : 1	
+	o	[2][5]	=	(o[0][5]>1) ? o[0][5]-1 : 1	";
+"	C6		C6	=WENN(A6>1;A6−1;1)	(A6>1) ? A6-1 : 1	
+	o	[3][1]	=	(o[2][1]>1) ? o[2][1]-1 : 1	";
+"	D2		D2	=WENN(C2>1;C2−1;1)	0	
+	o	[3][2]	=	(o[2][2]>1) ? o[2][2]-1 : 1	";
+"	D3		D3	=WENN(C3>1;C3−1;1)	ETC	
+	o	[3][3]	=	(o[2][3]>1) ? o[2][3]-1 : 1	";
+"	D4		D4	=WENN(C4>1;C4−1;1)	o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]	
+	o	[3][4]	=	(o[2][4]>1) ? o[2][4]-1 : 1	";
+"	D5		D5	=WENN(C5>1;C5−1;1)	o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]	
+	o	[3][5]	=	(o[2][5]>1) ? o[2][5]-1 : 1	";
+"	D6		D6	=WENN(C6>1;C6−1;1)	o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]	
+	o	[4][1]	=	(o[3][1]>1) ? o[3][1]-1 : 1	";
+"	E2		E2	=WENN(D2>1;D2−1;1)	o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]	
+	o	[4][2]	=	(o[3][2]>1) ? o[3][2]-1 : 1	";
+"	E3		E3	=WENN(D3>1;D3−1;1)	o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]	
+	o	[4][3]	=	(o[3][3]>1) ? o[3][3]-1 : 1	";
+"	E4		E4	=WENN(D4>1;D4−1;1)		
+	o	[4][4]	=	(o[3][4]>1) ? o[3][4]-1 : 1	";
+"	E5		E5	=WENN(D5>1;D5−1;1)		
+	o	[4][5]	=	(o[3][5]>1) ? o[3][5]-1 : 1	";
+"	E6		E6	=WENN(D6>1;D6−1;1)		
+	o	[5][1]	=	(o[4][1]>1) ? o[4][1]-1 : 1	";
+"	F2		F2	=WENN(E2>1;E2−1;1)		
+	o	[5][2]	=	(o[4][2]>1) ? o[4][2]-1 : 1	";
+"	F3		F3	=WENN(E3>1;E3−1;1)		
+	o	[5][3]	=	(o[4][3]>1) ? o[4][3]-1 : 1	";
+"	F4		F4	=WENN(E4>1;E4−1;1)		
+	o	[5][4]	=	(o[4][4]>1) ? o[4][4]-1 : 1	";
+"	F5		F5	=WENN(E5>1;E5−1;1)		
+	o	[5][5]	=	(o[4][5]>1) ? o[4][5]-1 : 1	";
+"	F6		F6	=WENN(E6>1;E6−1;1)		
+	o	[6][1]	=	(o[5][1]>1) ? o[5][1]-1 : 1	";
+"	G2		G2	=WENN(F2>1;F2−1;1)		
+	o	[6][2]	=	(o[5][2]>1) ? o[5][2]-1 : 1	";
+"	G3		G3	=WENN(F3>1;F3−1;1)		
+	o	[6][3]	=	(o[5][3]>1) ? o[5][3]-1 : 1	";
+"	G4		G4	=WENN(F4>1;F4−1;1)		
+	o	[6][4]	=	(o[5][4]>1) ? o[5][4]-1 : 1	";
+"	G5		G5	=WENN(F5>1;F5−1;1)		
+	o	[6][5]	=	(o[5][5]>1) ? o[5][5]-1 : 1	";
+"	G6		G6	=WENN(F6>1;F6−1;1)		
+	o	[7][1]	=	(o[6][1]>1) ? o[6][1]-1 : 1	";
+"	H2		H2	=WENN(G2>1;G2−1;1)		
+	o	[7][2]	=	(o[6][2]>1) ? o[6][2]-1 : 1	";
+"	H3		H3	=WENN(G3>1;G3−1;1)		
+	o	[7][3]	=	(o[6][3]>1) ? o[6][3]-1 : 1	";
+"	H4		H4	=WENN(G4>1;G4−1;1)		
+	o	[7][4]	=	(o[6][4]>1) ? o[6][4]-1 : 1	";
+"	H5		H5	=WENN(G5>1;G5−1;1)		
+	o	[7][5]	=	(o[6][5]>1) ? o[6][5]-1 : 1	";
+"	H6		H6	=WENN(G6>1;G6−1;1)		
+	o	[8][1]	=	"The Faculty of "+o[0][1]+" as written in "+o[0][1]+"! is "+o[1][1]	";
+"	I2		I2	="The Faculty of "&A2&" as written in "&A2&"! is "& B2		
+	o	[8][2]	=	"The Faculty of "+o[0][2]+" as written in "+o[0][2]+"! is "+o[1][2]	";
+"	I3		I3	="The Faculty of "&A3&" as written in "&A3&"! is "& B3		
+	o	[8][3]	=	"The Faculty of "+o[0][3]+" as written in "+o[0][3]+"! is "+o[1][3]	";
+"	I4		I4	="The Faculty of "&A4&" as written in "&A4&"! is "& B4		
+	o	[8][4]	=	"The Faculty of "+o[0][4]+" as written in "+o[0][4]+"! is "+o[1][4]	";
+"	I5		I5	="The Faculty of "&A5&" as written in "&A5&"! is "& B5		
+	o	[8][5]	=	"The Faculty of "+o[0][5]+" as written in "+o[0][5]+"! is "+o[1][5]	";
+"	I6		I6	="The Faculty of "&A6&" as written in "&A6&"! is "& B6		
+	o	[1][1]	=	o[0][1]*o[2][1]*o[3][1]*o[4][1]*o[5][1]*o[6][1]*o[7][1]	";
+"	B2		B2			
+	o	[1][2]	=	o[0][2]*o[2][2]*o[3][2]*o[4][2]*o[5][2]*o[6][2]*o[7][2]	";
+"	B3		B3			
+	o	[1][3]	=	o[0][3]*o[2][3]*o[3][3]*o[4][3]*o[5][3]*o[6][3]*o[7][3]	";
+"	B4		B4			
+	o	[1][4]	=	o[0][4]*o[2][4]*o[3][4]*o[4][4]*o[5][4]*o[6][4]*o[7][4]	";
+"	B5		B5			
+	o	[1][5]	=	o[0][5]*o[2][5]*o[3][5]*o[4][5]*o[5][5]*o[6][5]*o[7][5]	";
+"	B6		B6			
+						?					
+						?					
+						?					
+						?					
+						?					
+
+Regenerate response
+
+ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT May 24 Version
